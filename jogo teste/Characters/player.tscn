@@ -1,0 +1,165 @@
+[gd_scene load_steps=21 format=3 uid="uid://wpkdpfg11mbp"]
+
+[ext_resource type="Script" path="res://jogo teste/Characters/player.gd" id="1_xn0qg"]
+[ext_resource type="Texture2D" uid="uid://beavrdfia83yo" path="res://Assets/Sprite Pack 6/1 - Penguin/Falling (16 x 16).png" id="2_3570a"]
+[ext_resource type="Texture2D" uid="uid://bkuy0b7elp61m" path="res://Assets/Sprite Pack 6/1 - Penguin/Idle (16 x 16).png" id="3_3dli6"]
+[ext_resource type="Texture2D" uid="uid://bptwjrrv0ngct" path="res://Assets/Sprite Pack 6/1 - Penguin/Blink (16 x 16).png" id="4_12cj8"]
+[ext_resource type="Texture2D" uid="uid://cudqosbb27hef" path="res://Assets/Sprite Pack 6/1 - Penguin/Jump (16 x 16).png" id="5_esjfr"]
+[ext_resource type="Texture2D" uid="uid://bsmw3gwmeilfb" path="res://Assets/Sprite Pack 6/1 - Penguin/Waddling (16 x 16).png" id="6_xln8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjqrq"]
+size = Vector2(11.2083, 14.3333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxe1l"]
+atlas = ExtResource("3_3dli6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrct2"]
+atlas = ExtResource("3_3dli6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8qcf"]
+atlas = ExtResource("3_3dli6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4wc8"]
+atlas = ExtResource("3_3dli6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_286m3"]
+atlas = ExtResource("5_esjfr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8qrd"]
+atlas = ExtResource("6_xln8k")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_776xd"]
+atlas = ExtResource("6_xln8k")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yecta"]
+atlas = ExtResource("6_xln8k")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rfcv"]
+atlas = ExtResource("6_xln8k")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41rpg"]
+atlas = ExtResource("6_xln8k")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcbnm"]
+atlas = ExtResource("6_xln8k")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qa8wg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3570a")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxe1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxe1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_12cj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxe1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrct2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8qcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4wc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_12cj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxe1l")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_286m3")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8qrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_776xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yecta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rfcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41rpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcbnm")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd624"]
+size = Vector2(14.3333, 14)
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(272, 435)
+scale = Vector2(3, 3)
+collision_mask = 31
+script = ExtResource("1_xn0qg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.604164, 0.166672)
+shape = SubResource("RectangleShape2D_rjqrq")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(151.333, 714.667)
+zoom = Vector2(1.5, 1.5)
+limit_left = 76
+limit_top = -10000001
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Pinguint animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qa8wg")
+animation = &"Idle"
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 20
+
+[node name="Collision" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0.166664, -0.333313)
+shape = SubResource("RectangleShape2D_wd624")
+debug_color = Color(0.996078, 0, 0, 0.419608)
