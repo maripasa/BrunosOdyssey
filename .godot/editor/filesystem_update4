@@ -1,5 +1,1 @@
-res://jogo teste/world_01.tscn
-res://jogo teste/Characters/pinguin.tscn
-res://jogo teste/Characters/enemy.tscn
-res://jogo teste/hitbox.tscn
-res://jogo teste/Characters/player.gd
+res://background/background.tscn
