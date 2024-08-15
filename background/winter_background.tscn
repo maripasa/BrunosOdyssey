@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxgvi3lkxlucw"]
+[gd_scene load_steps=4 format=3 uid="uid://bmhlr2p7utr0u"]
 
-[ext_resource type="Texture2D" uid="uid://ckvp75d0jesnh" path="res://background/3 - Big_mountain_BG.png" id="1_prk5o"]
-[ext_resource type="Texture2D" uid="uid://cvsxpro7ryi2a" path="res://background/2 - Smaller_mountains.png" id="2_1clb3"]
-[ext_resource type="Texture2D" uid="uid://cmq2hijx5qwir" path="res://background/1 - Snowy_foreground_area.png" id="3_j6mo8"]
+[ext_resource type="Texture2D" uid="uid://ckvp75d0jesnh" path="res://background/3 - Big_mountain_BG.png" id="1_ux5mj"]
+[ext_resource type="Texture2D" uid="uid://cvsxpro7ryi2a" path="res://background/2 - Smaller_mountains.png" id="2_e6845"]
+[ext_resource type="Texture2D" uid="uid://cmq2hijx5qwir" path="res://background/1 - Snowy_foreground_area.png" id="3_52o1q"]
 
 [node name="WinterBackground" type="ParallaxBackground"]
 
@@ -12,7 +12,7 @@
 custom_minimum_size = Vector2(495, 360)
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_prk5o")
+texture = ExtResource("1_ux5mj")
 
 [node name="AdditionalSky" type="ParallaxLayer" parent="."]
 
@@ -20,7 +20,7 @@ texture = ExtResource("1_prk5o")
 custom_minimum_size = Vector2(495, 360)
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_prk5o")
+texture = ExtResource("1_ux5mj")
 
 [node name="DefaultBackground" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.1, 0.1)
@@ -31,7 +31,7 @@ custom_minimum_size = Vector2(495, 360)
 offset_left = 1.0
 offset_right = 641.0
 offset_bottom = 360.0
-texture = ExtResource("1_prk5o")
+texture = ExtResource("1_ux5mj")
 
 [node name="SmallerMountains" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(990, 0)
@@ -40,7 +40,7 @@ motion_mirroring = Vector2(990, 0)
 custom_minimum_size = Vector2(495, 360)
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_1clb3")
+texture = ExtResource("2_e6845")
 
 [node name="SmallerMountains2" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(990, 0)
@@ -50,7 +50,7 @@ custom_minimum_size = Vector2(495, 360)
 offset_left = 495.0
 offset_right = 993.46
 offset_bottom = 360.0
-texture = ExtResource("2_1clb3")
+texture = ExtResource("2_e6845")
 
 [node name="Foreground" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(990, 0)
@@ -59,7 +59,7 @@ motion_mirroring = Vector2(990, 0)
 custom_minimum_size = Vector2(495, 360)
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("3_j6mo8")
+texture = ExtResource("3_52o1q")
 
 [node name="Foreground2" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(990, 0)
@@ -69,4 +69,4 @@ custom_minimum_size = Vector2(495, 360)
 offset_left = 495.0
 offset_right = 993.46
 offset_bottom = 360.0
-texture = ExtResource("3_j6mo8")
+texture = ExtResource("3_52o1q")

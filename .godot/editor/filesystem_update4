@@ -1,1 +1,5 @@
-res://background/background.tscn
+res://terrain/terrain.tscn
+res://terrain/winter_terrain.tscn
+res://levels/winter_level.tscn
+res://levels/island_t_1.tscn
+res://background/winter_background.tscn

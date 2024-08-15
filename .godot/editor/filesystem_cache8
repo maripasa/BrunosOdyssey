@@ -1,8 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1723575532
+::res://::1723749332
 icon.svg::CompressedTexture2D::3655681739702213484::1723575389::1723575406::1::::<><>::
-::res://background/::1723575579
+::res://background/::1723748902
 1 - Snowy_foreground_area.png::CompressedTexture2D::5649789829645376249::1723047586::1723575602::1::::<><>::
 2 - Smaller_mountains.png::CompressedTexture2D::6285390077101979270::1723047586::1723575602::1::::<><>::
 3 - Big_mountain_BG.png::CompressedTexture2D::5519051218381243545::1723047586::1723575602::1::::<><>::
+winterlevel.tscn::PackedScene::4680638767044371405::1723748894::0::1::::<><>::uid://ckvp75d0jesnh::::res://background/3 - Big_mountain_BG.png<>uid://cvsxpro7ryi2a::::res://background/2 - Smaller_mountains.png<>uid://cmq2hijx5qwir::::res://background/1 - Snowy_foreground_area.png
 _Complete_static_BG_(288 x 208).png::CompressedTexture2D::2389163633465001331::1723047586::1723575602::1::::<><>::
+::res://terrain/::1723748981
+Terrain (16 x 16).png::CompressedTexture2D::4008793139598251841::1723748981::1723748981::1::::<><>::
