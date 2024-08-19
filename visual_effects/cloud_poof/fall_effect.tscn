@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=3 uid="uid://dn0p2gh14cbq0"]
+
+[ext_resource type="PackedScene" uid="uid://cctlscttppds1" path="res://visual_effects/components/base_effect.tscn" id="1_5yyhb"]
+[ext_resource type="Texture2D" uid="uid://dm4fbb0rsyi62" path="res://visual_effects/cloud_poof/1.png" id="2_yna6c"]
+[ext_resource type="Texture2D" uid="uid://clm8vqhdtc5ri" path="res://visual_effects/cloud_poof/2.png" id="3_cnrt5"]
+[ext_resource type="Texture2D" uid="uid://c23yib4ng1nc0" path="res://visual_effects/cloud_poof/3.png" id="4_hcnyy"]
+[ext_resource type="Texture2D" uid="uid://c8kbxaxrbh4fx" path="res://visual_effects/cloud_poof/4.png" id="5_iowyc"]
+[ext_resource type="Texture2D" uid="uid://bh05x5thbgrb0" path="res://visual_effects/cloud_poof/5.png" id="6_uee10"]
+[ext_resource type="Texture2D" uid="uid://c6x48yv6jqlmy" path="res://visual_effects/cloud_poof/6.png" id="7_q456c"]
+[ext_resource type="Texture2D" uid="uid://daxpey3awrkoc" path="res://visual_effects/cloud_poof/7.png" id="8_5bk1e"]
+[ext_resource type="Texture2D" uid="uid://dd55curwbr6an" path="res://visual_effects/cloud_poof/8.png" id="9_rske5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i48us"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yna6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cnrt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hcnyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iowyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uee10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q456c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5bk1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rske5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="FallEffect" instance=ExtResource("1_5yyhb")]
+sprite_frames = SubResource("SpriteFrames_i48us")

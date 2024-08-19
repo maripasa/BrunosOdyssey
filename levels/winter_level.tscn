@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjm5npwam2qee"]
+[gd_scene load_steps=4 format=3 uid="uid://bjm5npwam2qee"]
 
 [ext_resource type="PackedScene" uid="uid://bmhlr2p7utr0u" path="res://background/winter_background.tscn" id="1_q1j2f"]
 [ext_resource type="PackedScene" uid="uid://ccdex4wprhxq4" path="res://terrain/winter_terrain.tscn" id="2_42hfr"]
+[ext_resource type="PackedScene" uid="uid://drn01t1016vf4" path="res://character/character.tscn" id="3_4msi5"]
 
 [node name="WinterLevel" type="Node2D"]
 
 [node name="WinterBackground" parent="." instance=ExtResource("1_q1j2f")]
 
 [node name="WinterTerrain" parent="." instance=ExtResource("2_42hfr")]
-scale = Vector2(2, 2)
 layer_0/tile_data = PackedInt32Array(1179652, 196608, 1, 1179653, 458752, 3, 1245189, 458752, 4, 1245190, 851968, 3, 1245188, 196608, 6)
+
+[node name="Character" parent="." instance=ExtResource("3_4msi5")]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cctlscttppds1"]
+
+[ext_resource type="Script" path="res://visual_effects/components/base_effect.gd" id="1_k78as"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jt1u"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="BaseEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_8jt1u")
+autoplay = "default"
+script = ExtResource("1_k78as")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
