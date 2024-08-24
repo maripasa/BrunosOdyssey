@@ -1,0 +1,132 @@
+[gd_scene load_steps=25 format=3 uid="uid://1sywd4khjq5m"]
+
+[ext_resource type="PackedScene" uid="uid://dgnpybliw2acd" path="res://entities/components/base_enemy.tscn" id="1_fr2nv"]
+[ext_resource type="Texture2D" uid="uid://dobgct76jva4s" path="res://entities/skeleton/Standing_Idle/1.png" id="2_rkbqd"]
+[ext_resource type="Texture2D" uid="uid://bjl1gvml6lvwk" path="res://entities/skeleton/Standing_Idle/2.png" id="3_jp88n"]
+[ext_resource type="Texture2D" uid="uid://lsybv3guirww" path="res://entities/skeleton/Standing_Idle/3.png" id="4_cpwtl"]
+[ext_resource type="Texture2D" uid="uid://rbtktcl8ltuj" path="res://entities/skeleton/Standing_Idle/4.png" id="5_tjlqv"]
+[ext_resource type="Texture2D" uid="uid://3a2i4st6p5pb" path="res://entities/skeleton/Standing_Idle/5.png" id="6_65pfs"]
+[ext_resource type="Texture2D" uid="uid://dxjjrh0hupd2a" path="res://entities/skeleton/Standing_Idle/6.png" id="7_kqdys"]
+[ext_resource type="Texture2D" uid="uid://cspat3ihra5wi" path="res://entities/skeleton/Standing_Idle/7.png" id="8_yhetm"]
+[ext_resource type="Texture2D" uid="uid://be6gtprh7vcn0" path="res://entities/skeleton/Standing_Idle/8.png" id="9_32b5e"]
+[ext_resource type="Texture2D" uid="uid://dqjoy5oelfqly" path="res://entities/skeleton/Standing_Idle/9.png" id="10_mi364"]
+[ext_resource type="Texture2D" uid="uid://dlkfcgacesmh" path="res://entities/skeleton/Preparing_Jump/1.png" id="11_dcsyv"]
+[ext_resource type="Texture2D" uid="uid://0aq4pcmeqp6l" path="res://entities/skeleton/Preparing_Jump/2.png" id="12_02uml"]
+[ext_resource type="Texture2D" uid="uid://tnpa3kpi244o" path="res://entities/skeleton/Preparing_Jump/3.png" id="13_rt5x4"]
+[ext_resource type="Texture2D" uid="uid://b18uc7ri4j3rb" path="res://entities/skeleton/Jumping/1.png" id="14_cwtnt"]
+[ext_resource type="Texture2D" uid="uid://bej4x2bfuei4n" path="res://entities/skeleton/Landed/1.png" id="15_c4u6b"]
+[ext_resource type="Texture2D" uid="uid://btysijm5pwq47" path="res://entities/skeleton/Landed/2.png" id="16_ifbuf"]
+[ext_resource type="Texture2D" uid="uid://cit403en23rgp" path="res://entities/skeleton/Limping_Movement/1.png" id="17_s05mq"]
+[ext_resource type="Texture2D" uid="uid://oqdjmfp4dswb" path="res://entities/skeleton/Limping_Movement/2.png" id="18_6ds0t"]
+[ext_resource type="Texture2D" uid="uid://cdc6st37ye6rv" path="res://entities/skeleton/Limping_Movement/3.png" id="19_rlxt5"]
+[ext_resource type="Texture2D" uid="uid://b6uqaio75nx3o" path="res://entities/skeleton/Limping_Movement/4.png" id="20_410ou"]
+[ext_resource type="Texture2D" uid="uid://bdmitxn3g1t47" path="res://entities/skeleton/Limping_Movement/5.png" id="21_oun4b"]
+[ext_resource type="Texture2D" uid="uid://cnvc8jvarrap3" path="res://entities/skeleton/Limping_Movement/6.png" id="22_vpduj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8b78"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkbqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jp88n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cpwtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tjlqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_65pfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kqdys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yhetm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_32b5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mi364")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_dcsyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_02uml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rt5x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cwtnt")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_c4u6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ifbuf")
+}],
+"loop": false,
+"name": &"land",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_s05mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6ds0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rlxt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_410ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_oun4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vpduj")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55c3l"]
+size = Vector2(16, 27)
+
+[node name="Skeleton" instance=ExtResource("1_fr2nv")]
+
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_g8b78")
+animation = &"fall"
+autoplay = "idle"
+
+[node name="Collision" parent="." index="1"]
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_55c3l")
+
+[node name="FloorDetectionRay" parent="." index="2"]
+position = Vector2(12, 12)

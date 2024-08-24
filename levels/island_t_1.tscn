@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpbxqoou01mlj"]
+[gd_scene load_steps=4 format=3 uid="uid://cpbxqoou01mlj"]
 
 [ext_resource type="PackedScene" uid="uid://bjm5npwam2qee" path="res://levels/winter_level.tscn" id="1_u7yrv"]
 [ext_resource type="PackedScene" uid="uid://n3x4y7erq8ig" path="res://collectables/coin/collectable_coin.tscn" id="2_nbbof"]
+[ext_resource type="PackedScene" uid="uid://1sywd4khjq5m" path="res://entities/skeleton/skeleton.tscn" id="3_m5j1x"]
 
 [node name="IslandT1" instance=ExtResource("1_u7yrv")]
 
 [node name="WinterTerrain" parent="." index="1"]
 scale = Vector2(1, 1)
 collision_visibility_mode = 0
-layer_0/tile_data = PackedInt32Array(524291, 196608, 1, 524292, 393216, 3, 589828, 393216, 4, 589829, 393216, 4, 589830, 131072, 4, 589831, 327680, 6, 524295, 458752, 3, 524294, 262144, 1, 524293, 262144, 1, 589827, 196608, 6, 524301, 458752, 4, 458765, 458752, 3, 524300, 393216, 4, 458764, 262144, 1, 524299, 131072, 4, 458763, 262144, 1, 524298, 262144, 6, 458762, 393216, 3, 524297, 65536, 4, 458761, 196608, 1, 524306, 327680, 6, 524305, 393216, 4, 458769, 131072, 3, 458768, 65536, 3, 458770, 327680, 1, 524304, 65536, 4, 262153, 262144, 6, 327690, 65536, 4, 327691, 327680, 6, 196617, 131072, 3, 262154, 196608, 4, 262155, 327680, 5, 262152, 65536, 4, 196616, 65536, 3, 196618, 131072, 3, 196619, 327680, 1, 327692, 851968, 3)
+layer_0/tile_data = PackedInt32Array(524291, 196608, 1, 524292, 393216, 3, 589828, 393216, 4, 589829, 393216, 4, 589830, 131072, 4, 589831, 327680, 6, 524295, 458752, 3, 524294, 262144, 1, 524293, 262144, 1, 589827, 196608, 6, 524306, 327680, 6, 524305, 393216, 4, 458769, 131072, 3, 458768, 65536, 3, 458770, 327680, 1, 524304, 65536, 4)
 
 [node name="Character" parent="." index="2"]
-position = Vector2(68, 111)
+position = Vector2(277, 89)
 
 [node name="CollectableCoin" parent="." index="3" instance=ExtResource("2_nbbof")]
 position = Vector2(174, 104)
+
+[node name="Skeleton" parent="Enemies" index="0" instance=ExtResource("3_m5j1x")]
+position = Vector2(79, 112)
+_enemy_type = 2

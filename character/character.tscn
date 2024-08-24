@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://drn01t1016vf4"]
+[gd_scene load_steps=20 format=3 uid="uid://drn01t1016vf4"]
 
 [ext_resource type="Texture2D" uid="uid://cjclk3fnn4okp" path="res://character/idle/1.png" id="1_hulob"]
 [ext_resource type="Script" path="res://character/character.gd" id="1_pcopu"]
@@ -53,7 +53,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -90,6 +90,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybstw"]
 size = Vector2(11, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xu88w"]
+size = Vector2(9, 2)
+
 [node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_character_texture")]
 script = ExtResource("1_pcopu")
 _character_texture = NodePath("Texture")
@@ -98,6 +101,7 @@ _character_texture = NodePath("Texture")
 sprite_frames = SubResource("SpriteFrames_dedwu")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.144397
 script = ExtResource("15_ufchq")
 _character = NodePath("..")
 
@@ -108,6 +112,12 @@ shape = SubResource("RectangleShape2D_ybstw")
 [node name="FallTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0.5, 8)
+shape = SubResource("RectangleShape2D_xu88w")
 
 [connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
 [connection signal="frame_changed" from="Texture" to="Texture" method="_on_frame_changed"]

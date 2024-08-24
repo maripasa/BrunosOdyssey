@@ -12,3 +12,5 @@
 layer_0/tile_data = PackedInt32Array(1179652, 196608, 1, 1179653, 458752, 3, 1245189, 458752, 4, 1245190, 851968, 3, 1245188, 196608, 6)
 
 [node name="Character" parent="." instance=ExtResource("3_4msi5")]
+
+[node name="Enemies" type="Node2D" parent="."]

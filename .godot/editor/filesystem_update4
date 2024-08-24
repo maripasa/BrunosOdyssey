@@ -1,9 +1,5 @@
-res://visual_effects/cloud_poof/fall_effect.tscn
-res://character/character.gd
-res://collectables/components/collectable_component.tscn
-res://collectables/coin/collectable_coin.tscn
+res://entities/components/base_enemy.tscn
+res://entities/components/base_enemy.gd
 res://levels/island_t_1.tscn
-res://visual_effects/components/base_effect.tscn
-res://visual_effects/dust/run_effect.tscn
-res://character/character.tscn
-res://levels/winter_level.tscn
+res://entities/skeleton/skeleton.tscn
+res://entities/components/enemy_texture.gd
