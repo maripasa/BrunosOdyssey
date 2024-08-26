@@ -24,7 +24,7 @@ func animate(_velocity: Vector2) -> void:
 			play("jump")
 			return
 			
-	if _velocity.x:		
+	if _velocity.x:
 		play("run")
 
 func _verify_direction(_direction: float) -> void:
@@ -44,7 +44,6 @@ func _on_animation_finished() -> void:
 	
 func _on_frame_changed() -> void:
 	if animation == "run":
-		print(frame)
 		if frame % 2 != 0:
 			global.spawn_effect(
 			"res://visual_effects/dust/run_effect.tscn",

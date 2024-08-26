@@ -1,27 +1,38 @@
-[gd_scene load_steps=20 format=3 uid="uid://drn01t1016vf4"]
+[gd_scene load_steps=23 format=3 uid="uid://b31o0nbftwuxg"]
 
 [ext_resource type="Texture2D" uid="uid://cjclk3fnn4okp" path="res://character/idle/1.png" id="1_hulob"]
 [ext_resource type="Script" path="res://character/character.gd" id="1_pcopu"]
 [ext_resource type="Texture2D" uid="uid://75mrj84ovcee" path="res://character/idle/2.png" id="2_n5g3r"]
-[ext_resource type="Texture2D" uid="uid://bu274fm5hqqxy" path="res://character/Falling (16 x 16).png" id="2_uvfga"]
-[ext_resource type="Texture2D" uid="uid://cl67lfulpejem" path="res://character/Ducking (16 x 16).png" id="2_xnneg"]
+[ext_resource type="Texture2D" uid="uid://fs78478hdewo" path="res://character/Lying_On_Ground/1.png" id="2_o7ka3"]
 [ext_resource type="Texture2D" uid="uid://wmgirrmrwnpb" path="res://character/idle/3.png" id="3_pcfar"]
+[ext_resource type="Texture2D" uid="uid://turn1ndsoxyy" path="res://character/Ducking/1.png" id="3_wklbv"]
 [ext_resource type="Texture2D" uid="uid://dpoi8ugb4m85o" path="res://character/idle/4.png" id="4_oa5kf"]
+[ext_resource type="Texture2D" uid="uid://b88pnx2veg2cj" path="res://character/Falling/1.png" id="4_qp5eq"]
+[ext_resource type="Texture2D" uid="uid://cq51pnn7gfmdr" path="res://character/Hurt/1.png" id="5_7s1pl"]
 [ext_resource type="Texture2D" uid="uid://7l4mmjjsv06m" path="res://character/idle/5.png" id="5_pj6yb"]
-[ext_resource type="Texture2D" uid="uid://nx0rentiodib" path="res://character/Jump (16 x 16).png" id="8_2r80n"]
 [ext_resource type="Texture2D" uid="uid://xbfo3bmx7rhv" path="res://character/run/1.png" id="9_hbdpt"]
 [ext_resource type="Texture2D" uid="uid://34qrichsrury" path="res://character/run/2.png" id="10_6g88c"]
+[ext_resource type="Texture2D" uid="uid://dg816qsi5x37e" path="res://character/Jump/1.png" id="11_dccam"]
 [ext_resource type="Texture2D" uid="uid://jw42gstkkse5" path="res://character/run/3.png" id="11_wsekn"]
 [ext_resource type="Texture2D" uid="uid://jvmbq7o83ich" path="res://character/run/4.png" id="12_ogy1l"]
 [ext_resource type="Texture2D" uid="uid://dwuf0nmh3bc5s" path="res://character/run/5.png" id="13_itn6e"]
 [ext_resource type="Texture2D" uid="uid://dpoa5i5bkmwan" path="res://character/run/6.png" id="14_sdbhe"]
 [ext_resource type="Script" path="res://character/character_texture.gd" id="15_ufchq"]
+[ext_resource type="Script" path="res://character/character_attack_area.gd" id="17_0vtf8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dedwu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_xnneg")
+"texture": ExtResource("2_o7ka3")
+}],
+"loop": true,
+"name": &"dead_hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wklbv")
 }],
 "loop": false,
 "name": &"duck",
@@ -29,11 +40,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_uvfga")
+"texture": ExtResource("4_qp5eq")
 }],
 "loop": false,
 "name": &"falling",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7s1pl")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -57,11 +76,11 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_2r80n")
+"texture": ExtResource("11_dccam")
 }],
 "loop": false,
 "name": &"jump",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -91,17 +110,19 @@ animations = [{
 size = Vector2(11, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xu88w"]
-size = Vector2(9, 2)
+size = Vector2(11, 2)
 
-[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_character_texture")]
+[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_character_texture", "_knockback_timer")]
 script = ExtResource("1_pcopu")
+_speed = 100.0
+_high_fall_threshold = 70.0
 _character_texture = NodePath("Texture")
+_knockback_timer = NodePath("KnockbackTimer")
 
 [node name="Texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("_character")]
 sprite_frames = SubResource("SpriteFrames_dedwu")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.144397
 script = ExtResource("15_ufchq")
 _character = NodePath("..")
 
@@ -113,11 +134,20 @@ shape = SubResource("RectangleShape2D_ybstw")
 wait_time = 2.0
 one_shot = true
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="AttackArea" type="Area2D" parent="." node_paths=PackedStringArray("_character")]
+script = ExtResource("17_0vtf8")
+_attack_damage = 2
+_character = NodePath("..")
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(0.5, 8)
 shape = SubResource("RectangleShape2D_xu88w")
 
+[node name="KnockbackTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
 [connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
 [connection signal="frame_changed" from="Texture" to="Texture" method="_on_frame_changed"]
+[connection signal="body_entered" from="AttackArea" to="AttackArea" method="_on_body_entered"]
+[connection signal="timeout" from="KnockbackTimer" to="." method="_on_knockback_timer_timeout"]

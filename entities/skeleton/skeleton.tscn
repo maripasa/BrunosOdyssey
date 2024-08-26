@@ -1,20 +1,35 @@
-[gd_scene load_steps=25 format=3 uid="uid://1sywd4khjq5m"]
+[gd_scene load_steps=42 format=3 uid="uid://1sywd4khjq5m"]
 
 [ext_resource type="PackedScene" uid="uid://dgnpybliw2acd" path="res://entities/components/base_enemy.tscn" id="1_fr2nv"]
+[ext_resource type="Texture2D" uid="uid://c446j2pi7gfec" path="res://entities/skeleton/Bone_Toss/3.png" id="2_bdwag"]
+[ext_resource type="Script" path="res://entities/skeleton/skeleton.gd" id="2_i34k4"]
 [ext_resource type="Texture2D" uid="uid://dobgct76jva4s" path="res://entities/skeleton/Standing_Idle/1.png" id="2_rkbqd"]
 [ext_resource type="Texture2D" uid="uid://bjl1gvml6lvwk" path="res://entities/skeleton/Standing_Idle/2.png" id="3_jp88n"]
+[ext_resource type="Texture2D" uid="uid://c6nlepc3niofu" path="res://entities/skeleton/Bone_Toss/4.png" id="3_vnuti"]
+[ext_resource type="Texture2D" uid="uid://qsearh20tk62" path="res://entities/skeleton/Bone_Toss/5.png" id="4_a7hh6"]
 [ext_resource type="Texture2D" uid="uid://lsybv3guirww" path="res://entities/skeleton/Standing_Idle/3.png" id="4_cpwtl"]
 [ext_resource type="Texture2D" uid="uid://rbtktcl8ltuj" path="res://entities/skeleton/Standing_Idle/4.png" id="5_tjlqv"]
+[ext_resource type="Texture2D" uid="uid://b8qjtwmfxmjal" path="res://entities/skeleton/Bone_Toss/1.png" id="5_ujjer"]
 [ext_resource type="Texture2D" uid="uid://3a2i4st6p5pb" path="res://entities/skeleton/Standing_Idle/5.png" id="6_65pfs"]
+[ext_resource type="Texture2D" uid="uid://cu2fgwcd4o4cu" path="res://entities/skeleton/Bone_Toss/2.png" id="6_gnl0h"]
 [ext_resource type="Texture2D" uid="uid://dxjjrh0hupd2a" path="res://entities/skeleton/Standing_Idle/6.png" id="7_kqdys"]
+[ext_resource type="Texture2D" uid="uid://dmpfbw2ul2n4g" path="res://entities/skeleton/Crumbling_Into_Bone_Pile/1.png" id="8_ei3ed"]
 [ext_resource type="Texture2D" uid="uid://cspat3ihra5wi" path="res://entities/skeleton/Standing_Idle/7.png" id="8_yhetm"]
 [ext_resource type="Texture2D" uid="uid://be6gtprh7vcn0" path="res://entities/skeleton/Standing_Idle/8.png" id="9_32b5e"]
+[ext_resource type="Texture2D" uid="uid://ikf22bi0i0ur" path="res://entities/skeleton/Crumbling_Into_Bone_Pile/2.png" id="9_k4dp7"]
 [ext_resource type="Texture2D" uid="uid://dqjoy5oelfqly" path="res://entities/skeleton/Standing_Idle/9.png" id="10_mi364"]
+[ext_resource type="Texture2D" uid="uid://dlbqqqca16438" path="res://entities/skeleton/Crumbling_Into_Bone_Pile/3.png" id="10_v0cew"]
 [ext_resource type="Texture2D" uid="uid://dlkfcgacesmh" path="res://entities/skeleton/Preparing_Jump/1.png" id="11_dcsyv"]
+[ext_resource type="Texture2D" uid="uid://dqt4cg4xydxg3" path="res://entities/skeleton/Crumbling_Into_Bone_Pile/4.png" id="11_pcwu7"]
+[ext_resource type="Texture2D" uid="uid://cl4me74hoknqp" path="res://entities/skeleton/Crumbling_Into_Bone_Pile/5.png" id="12_1m8hh"]
 [ext_resource type="Texture2D" uid="uid://0aq4pcmeqp6l" path="res://entities/skeleton/Preparing_Jump/2.png" id="12_02uml"]
 [ext_resource type="Texture2D" uid="uid://tnpa3kpi244o" path="res://entities/skeleton/Preparing_Jump/3.png" id="13_rt5x4"]
+[ext_resource type="Texture2D" uid="uid://dbqj5dccfa78k" path="res://entities/skeleton/Crumbling_Into_Bone_Pile/6.png" id="13_su2xk"]
 [ext_resource type="Texture2D" uid="uid://b18uc7ri4j3rb" path="res://entities/skeleton/Jumping/1.png" id="14_cwtnt"]
+[ext_resource type="Texture2D" uid="uid://t6mkvv4g5vc7" path="res://entities/skeleton/Crumbling_Into_Bone_Pile/7.png" id="14_dnxpu"]
 [ext_resource type="Texture2D" uid="uid://bej4x2bfuei4n" path="res://entities/skeleton/Landed/1.png" id="15_c4u6b"]
+[ext_resource type="Texture2D" uid="uid://dy0vo6sbg64n0" path="res://entities/skeleton/Hurt/1.png" id="15_iw2yk"]
+[ext_resource type="Texture2D" uid="uid://xkqm0tx5c3l3" path="res://entities/skeleton/Hurt/2.png" id="16_a5une"]
 [ext_resource type="Texture2D" uid="uid://btysijm5pwq47" path="res://entities/skeleton/Landed/2.png" id="16_ifbuf"]
 [ext_resource type="Texture2D" uid="uid://cit403en23rgp" path="res://entities/skeleton/Limping_Movement/1.png" id="17_s05mq"]
 [ext_resource type="Texture2D" uid="uid://oqdjmfp4dswb" path="res://entities/skeleton/Limping_Movement/2.png" id="18_6ds0t"]
@@ -25,9 +40,71 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g8b78"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bdwag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vnuti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a7hh6")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ujjer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gnl0h")
+}],
+"loop": false,
+"name": &"attack_anticipation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ei3ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_k4dp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v0cew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pcwu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1m8hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_su2xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dnxpu")
+}],
+"loop": false,
+"name": &"dead_hit",
+"speed": 10.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_iw2yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_a5une")
+}],
+"loop": false,
+"name": &"hit",
 "speed": 10.0
 }, {
 "frames": [{
@@ -115,18 +192,42 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55c3l"]
-size = Vector2(16, 27)
+size = Vector2(16, 26)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_56sop"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyu3h"]
+radius = 12.0
 
 [node name="Skeleton" instance=ExtResource("1_fr2nv")]
+script = ExtResource("2_i34k4")
+_knockback_speed = 0.0
 
 [node name="Texture" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_g8b78")
-animation = &"fall"
+animation = &"dead_hit"
 autoplay = "idle"
+_last_attack_frame = 2
 
 [node name="Collision" parent="." index="1"]
-position = Vector2(1, 2.5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_55c3l")
 
 [node name="FloorDetectionRay" parent="." index="2"]
 position = Vector2(12, 12)
+
+[node name="AttackArea" parent="." index="3"]
+_attack_damage = 5
+
+[node name="Collision" parent="AttackArea" index="0"]
+position = Vector2(5, 3)
+shape = SubResource("CircleShape2D_56sop")
+disabled = true
+
+[node name="Collision" parent="DetectionArea" index="0"]
+position = Vector2(5, 3)
+shape = SubResource("CircleShape2D_eyu3h")
+
+[node name="KnockbackTimer" parent="." index="5"]
+wait_time = 0.001

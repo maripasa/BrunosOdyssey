@@ -1,5 +1,6 @@
-res://entities/components/base_enemy.tscn
-res://entities/components/base_enemy.gd
+res://interface/menu/main_menu.tscn
 res://levels/island_t_1.tscn
+res://character/character.tscn
+res://entities/components/base_enemy.tscn
 res://entities/skeleton/skeleton.tscn
-res://entities/components/enemy_texture.gd
+res://terrain/winter_terrain.tscn
