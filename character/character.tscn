@@ -116,6 +116,7 @@ size = Vector2(11, 2)
 script = ExtResource("1_pcopu")
 _speed = 100.0
 _high_fall_threshold = 70.0
+_knockback_speed = 50
 _character_texture = NodePath("Texture")
 _knockback_timer = NodePath("KnockbackTimer")
 

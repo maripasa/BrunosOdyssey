@@ -42,8 +42,8 @@ func _vertical_movement(_delta: float) -> void:
 	if is_on_floor():
 		if not _is_alive:
 			velocity.x = 0
-			collision_layer = 2
-			collision_mask = 2
+			collision_layer = 3
+			collision_mask = 3
 			return
 		if _is_falling:
 			_is_falling = false
