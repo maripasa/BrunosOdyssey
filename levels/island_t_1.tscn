@@ -9,14 +9,14 @@
 [node name="WinterTerrain" parent="." index="1"]
 scale = Vector2(1, 1)
 collision_visibility_mode = 0
-layer_0/tile_data = PackedInt32Array(524291, 196608, 1, 524292, 393216, 3, 589828, 393216, 4, 589829, 393216, 4, 589830, 131072, 4, 589831, 327680, 6, 524295, 458752, 3, 524294, 262144, 1, 524293, 262144, 1, 589827, 196608, 6, 524306, 327680, 6, 524305, 393216, 4, 458769, 131072, 3, 458768, 65536, 3, 458770, 327680, 1, 524304, 65536, 4)
+layer_0/tile_data = PackedInt32Array(1245190, 196608, 1, 1310726, 196608, 6, 1245191, 393216, 3, 1310727, 393216, 4, 1245192, 262144, 1, 1310728, 393216, 4, 1245193, 262144, 1, 1310729, 131072, 4, 1245194, 458752, 3, 1310730, 327680, 6, 1245197, 65536, 3, 1310733, 65536, 4, 1245198, 131072, 3, 1310734, 393216, 4, 1245199, 327680, 1, 1310735, 327680, 6)
 
 [node name="Character" parent="." index="2"]
-position = Vector2(277, 89)
+position = Vector2(231, 287)
 
 [node name="CollectableCoin" parent="." index="3" instance=ExtResource("2_nbbof")]
-position = Vector2(174, 104)
+position = Vector2(162, 261)
 
 [node name="Skeleton" parent="Enemies" index="0" instance=ExtResource("3_m5j1x")]
-position = Vector2(79, 112)
+position = Vector2(119, 254)
 _enemy_type = 2

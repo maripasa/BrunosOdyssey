@@ -1,15 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1724623027
+::res://::1724719261
 icon.svg::CompressedTexture2D::3655681739702213484::1723894231::1724615532::1::::<><>::
-::res://background/::1724615532
-1 - Snowy_foreground_area.png::CompressedTexture2D::5649789829645376249::1723894231::1724615532::1::::<><>::
+::res://background/::1724718851
+1 - Snowy_foreground_area.png::CompressedTexture2D::5649789829645376249::1724718869::1724719262::1::::<><>::
 2 - Smaller_mountains.png::CompressedTexture2D::6285390077101979270::1723894231::1724615532::1::::<><>::
 3 - Big_mountain_BG.png::CompressedTexture2D::5519051218381243545::1723894231::1724615532::1::::<><>::
-winter_background.tscn::PackedScene::3243837139828670146::1723989820::0::1::::<><>::uid://ckvp75d0jesnh::::res://background/3 - Big_mountain_BG.png<>uid://cvsxpro7ryi2a::::res://background/2 - Smaller_mountains.png<>uid://cmq2hijx5qwir::::res://background/1 - Snowy_foreground_area.png
+additional_ground.png::CompressedTexture2D::4488665279583521488::1724717808::1724717809::1::::<><>::
+additional_sky.png::CompressedTexture2D::6476887819361371600::1724717756::1724717809::1::::<><>::
+winter_background.tscn::PackedScene::3243837139828670146::1724718777::0::1::::<><>::uid://ckvp75d0jesnh::::res://background/3 - Big_mountain_BG.png<>uid://cvsxpro7ryi2a::::res://background/2 - Smaller_mountains.png<>uid://cyjpnp5kld7f5::::res://background/additional_sky.png<>uid://cmq2hijx5qwir::::res://background/1 - Snowy_foreground_area.png<>uid://b47lwqr2g474o::::res://background/additional_ground.png
 _Complete_static_BG_(288 x 208).png::CompressedTexture2D::2389163633465001331::1723894231::1724615532::1::::<><>::
-::res://character/::1724621023
+::res://character/::1724718777
 character.gd::GDScript::-1::1724619529::0::1::::BaseCharacter<>CharacterBody2D<>::
-character.tscn::PackedScene::4406277494511727268::1724621023::0::1::::<><>::uid://cjclk3fnn4okp::::res://character/idle/1.png<>res://character/character.gd<>uid://75mrj84ovcee::::res://character/idle/2.png<>uid://fs78478hdewo::::res://character/Lying_On_Ground/1.png<>uid://wmgirrmrwnpb::::res://character/idle/3.png<>uid://turn1ndsoxyy::::res://character/Ducking/1.png<>uid://dpoi8ugb4m85o::::res://character/idle/4.png<>uid://b88pnx2veg2cj::::res://character/Falling/1.png<>uid://cq51pnn7gfmdr::::res://character/Hurt/1.png<>uid://7l4mmjjsv06m::::res://character/idle/5.png<>uid://xbfo3bmx7rhv::::res://character/run/1.png<>uid://34qrichsrury::::res://character/run/2.png<>uid://dg816qsi5x37e::::res://character/Jump/1.png<>uid://jw42gstkkse5::::res://character/run/3.png<>uid://jvmbq7o83ich::::res://character/run/4.png<>uid://dwuf0nmh3bc5s::::res://character/run/5.png<>uid://dpoa5i5bkmwan::::res://character/run/6.png<>res://character/character_texture.gd<>res://character/character_attack_area.gd
+character.tscn::PackedScene::4406277494511727268::1724718777::0::1::::<><>::uid://cjclk3fnn4okp::::res://character/idle/1.png<>res://character/character.gd<>uid://75mrj84ovcee::::res://character/idle/2.png<>uid://fs78478hdewo::::res://character/Lying_On_Ground/1.png<>uid://wmgirrmrwnpb::::res://character/idle/3.png<>uid://turn1ndsoxyy::::res://character/Ducking/1.png<>uid://dpoi8ugb4m85o::::res://character/idle/4.png<>uid://b88pnx2veg2cj::::res://character/Falling/1.png<>uid://cq51pnn7gfmdr::::res://character/Hurt/1.png<>uid://7l4mmjjsv06m::::res://character/idle/5.png<>uid://xbfo3bmx7rhv::::res://character/run/1.png<>uid://34qrichsrury::::res://character/run/2.png<>uid://dg816qsi5x37e::::res://character/Jump/1.png<>uid://jw42gstkkse5::::res://character/run/3.png<>uid://jvmbq7o83ich::::res://character/run/4.png<>uid://dwuf0nmh3bc5s::::res://character/run/5.png<>uid://dpoa5i5bkmwan::::res://character/run/6.png<>res://character/character_texture.gd<>res://character/character_attack_area.gd
 character_attack_area.gd::GDScript::-1::1724616074::0::1::::CharacterAttackArea<>Area2D<>::
 character_texture.gd::GDScript::-1::1724621023::0::1::::CharacterTexture<>AnimatedSprite2D<>::
 ::res://character/Belly_Sliding/::1724615532
@@ -89,14 +91,14 @@ collectable_coin.tscn::PackedScene::971707133464236842::1724503918::0::1::::<><>
 collectable_component.gd::GDScript::-1::1723990723::0::1::::CollectableComponent<>Area2D<>::
 collectable_component.tscn::PackedScene::1165676969996790609::1724503918::0::1::::<><>::res://collectables/components/collectable_component.gd
 ::res://entities/::1724501199
-::res://entities/components/::1724619587
+::res://entities/components/::1724718777
 base_enemy.gd::GDScript::-1::1724619388::0::1::::BaseEnemy<>CharacterBody2D<>::
-base_enemy.tscn::PackedScene::7608185707565631807::1724619587::0::1::::<><>::res://entities/components/base_enemy.gd<>res://entities/components/enemy_texture.gd<>res://entities/components/enemy_attack_area.gd
+base_enemy.tscn::PackedScene::7608185707565631807::1724718777::0::1::::<><>::res://entities/components/base_enemy.gd<>res://entities/components/enemy_texture.gd<>res://entities/components/enemy_attack_area.gd
 enemy_attack_area.gd::GDScript::-1::1724616461::0::1::::EnemyAttackArea<>Area2D<>::
 enemy_texture.gd::GDScript::-1::1724589451::0::1::::EnemyTexture<>AnimatedSprite2D<>::
-::res://entities/skeleton/::1724619587
+::res://entities/skeleton/::1724718777
 skeleton.gd::GDScript::-1::1724618870::0::1::::Skeleton<>BaseEnemy<>::
-skeleton.tscn::PackedScene::1863565432287681152::1724619587::0::1::::<><>::uid://dgnpybliw2acd::::res://entities/components/base_enemy.tscn<>uid://c446j2pi7gfec::::res://entities/skeleton/Bone_Toss/3.png<>res://entities/skeleton/skeleton.gd<>uid://dobgct76jva4s::::res://entities/skeleton/Standing_Idle/1.png<>uid://bjl1gvml6lvwk::::res://entities/skeleton/Standing_Idle/2.png<>uid://c6nlepc3niofu::::res://entities/skeleton/Bone_Toss/4.png<>uid://qsearh20tk62::::res://entities/skeleton/Bone_Toss/5.png<>uid://lsybv3guirww::::res://entities/skeleton/Standing_Idle/3.png<>uid://rbtktcl8ltuj::::res://entities/skeleton/Standing_Idle/4.png<>uid://b8qjtwmfxmjal::::res://entities/skeleton/Bone_Toss/1.png<>uid://3a2i4st6p5pb::::res://entities/skeleton/Standing_Idle/5.png<>uid://cu2fgwcd4o4cu::::res://entities/skeleton/Bone_Toss/2.png<>uid://dxjjrh0hupd2a::::res://entities/skeleton/Standing_Idle/6.png<>uid://dmpfbw2ul2n4g::::res://entities/skeleton/Crumbling_Into_Bone_Pile/1.png<>uid://cspat3ihra5wi::::res://entities/skeleton/Standing_Idle/7.png<>uid://be6gtprh7vcn0::::res://entities/skeleton/Standing_Idle/8.png<>uid://ikf22bi0i0ur::::res://entities/skeleton/Crumbling_Into_Bone_Pile/2.png<>uid://dqjoy5oelfqly::::res://entities/skeleton/Standing_Idle/9.png<>uid://dlbqqqca16438::::res://entities/skeleton/Crumbling_Into_Bone_Pile/3.png<>uid://dlkfcgacesmh::::res://entities/skeleton/Preparing_Jump/1.png<>uid://dqt4cg4xydxg3::::res://entities/skeleton/Crumbling_Into_Bone_Pile/4.png<>uid://cl4me74hoknqp::::res://entities/skeleton/Crumbling_Into_Bone_Pile/5.png<>uid://0aq4pcmeqp6l::::res://entities/skeleton/Preparing_Jump/2.png<>uid://tnpa3kpi244o::::res://entities/skeleton/Preparing_Jump/3.png<>uid://dbqj5dccfa78k::::res://entities/skeleton/Crumbling_Into_Bone_Pile/6.png<>uid://b18uc7ri4j3rb::::res://entities/skeleton/Jumping/1.png<>uid://t6mkvv4g5vc7::::res://entities/skeleton/Crumbling_Into_Bone_Pile/7.png<>uid://bej4x2bfuei4n::::res://entities/skeleton/Landed/1.png<>uid://dy0vo6sbg64n0::::res://entities/skeleton/Hurt/1.png<>uid://xkqm0tx5c3l3::::res://entities/skeleton/Hurt/2.png<>uid://btysijm5pwq47::::res://entities/skeleton/Landed/2.png<>uid://cit403en23rgp::::res://entities/skeleton/Limping_Movement/1.png<>uid://oqdjmfp4dswb::::res://entities/skeleton/Limping_Movement/2.png<>uid://cdc6st37ye6rv::::res://entities/skeleton/Limping_Movement/3.png<>uid://b6uqaio75nx3o::::res://entities/skeleton/Limping_Movement/4.png<>uid://bdmitxn3g1t47::::res://entities/skeleton/Limping_Movement/5.png<>uid://cnvc8jvarrap3::::res://entities/skeleton/Limping_Movement/6.png
+skeleton.tscn::PackedScene::1863565432287681152::1724718777::0::1::::<><>::uid://dgnpybliw2acd::::res://entities/components/base_enemy.tscn<>uid://c446j2pi7gfec::::res://entities/skeleton/Bone_Toss/3.png<>res://entities/skeleton/skeleton.gd<>uid://dobgct76jva4s::::res://entities/skeleton/Standing_Idle/1.png<>uid://bjl1gvml6lvwk::::res://entities/skeleton/Standing_Idle/2.png<>uid://c6nlepc3niofu::::res://entities/skeleton/Bone_Toss/4.png<>uid://qsearh20tk62::::res://entities/skeleton/Bone_Toss/5.png<>uid://lsybv3guirww::::res://entities/skeleton/Standing_Idle/3.png<>uid://rbtktcl8ltuj::::res://entities/skeleton/Standing_Idle/4.png<>uid://b8qjtwmfxmjal::::res://entities/skeleton/Bone_Toss/1.png<>uid://3a2i4st6p5pb::::res://entities/skeleton/Standing_Idle/5.png<>uid://cu2fgwcd4o4cu::::res://entities/skeleton/Bone_Toss/2.png<>uid://dxjjrh0hupd2a::::res://entities/skeleton/Standing_Idle/6.png<>uid://dmpfbw2ul2n4g::::res://entities/skeleton/Crumbling_Into_Bone_Pile/1.png<>uid://cspat3ihra5wi::::res://entities/skeleton/Standing_Idle/7.png<>uid://be6gtprh7vcn0::::res://entities/skeleton/Standing_Idle/8.png<>uid://ikf22bi0i0ur::::res://entities/skeleton/Crumbling_Into_Bone_Pile/2.png<>uid://dqjoy5oelfqly::::res://entities/skeleton/Standing_Idle/9.png<>uid://dlbqqqca16438::::res://entities/skeleton/Crumbling_Into_Bone_Pile/3.png<>uid://dlkfcgacesmh::::res://entities/skeleton/Preparing_Jump/1.png<>uid://dqt4cg4xydxg3::::res://entities/skeleton/Crumbling_Into_Bone_Pile/4.png<>uid://cl4me74hoknqp::::res://entities/skeleton/Crumbling_Into_Bone_Pile/5.png<>uid://0aq4pcmeqp6l::::res://entities/skeleton/Preparing_Jump/2.png<>uid://tnpa3kpi244o::::res://entities/skeleton/Preparing_Jump/3.png<>uid://dbqj5dccfa78k::::res://entities/skeleton/Crumbling_Into_Bone_Pile/6.png<>uid://b18uc7ri4j3rb::::res://entities/skeleton/Jumping/1.png<>uid://t6mkvv4g5vc7::::res://entities/skeleton/Crumbling_Into_Bone_Pile/7.png<>uid://bej4x2bfuei4n::::res://entities/skeleton/Landed/1.png<>uid://dy0vo6sbg64n0::::res://entities/skeleton/Hurt/1.png<>uid://xkqm0tx5c3l3::::res://entities/skeleton/Hurt/2.png<>uid://btysijm5pwq47::::res://entities/skeleton/Landed/2.png<>uid://cit403en23rgp::::res://entities/skeleton/Limping_Movement/1.png<>uid://oqdjmfp4dswb::::res://entities/skeleton/Limping_Movement/2.png<>uid://cdc6st37ye6rv::::res://entities/skeleton/Limping_Movement/3.png<>uid://b6uqaio75nx3o::::res://entities/skeleton/Limping_Movement/4.png<>uid://bdmitxn3g1t47::::res://entities/skeleton/Limping_Movement/5.png<>uid://cnvc8jvarrap3::::res://entities/skeleton/Limping_Movement/6.png
 ::res://entities/skeleton/Bone_Pile/::1724615532
 1.png::CompressedTexture2D::1545605398000297455::1724006363::1724615532::1::::<><>::
 ::res://entities/skeleton/Bone_Pile_Wakeup/::1724615532
@@ -168,14 +170,17 @@ skeleton.tscn::PackedScene::1863565432287681152::1724619587::0::1::::<><>::uid:/
 2.png::CompressedTexture2D::7998446208986110754::1724006363::1724615532::1::::<><>::
 3.png::CompressedTexture2D::7602896293776635744::1724006363::1724615532::1::::<><>::
 4.png::CompressedTexture2D::1658017606372511273::1724006363::1724615532::1::::<><>::
-::res://levels/::1724619587
-island_t_1.tscn::PackedScene::5829164221144171535::1724619587::0::1::::<><>::uid://bjm5npwam2qee::::res://levels/winter_level.tscn<>uid://n3x4y7erq8ig::::res://collectables/coin/collectable_coin.tscn<>uid://1sywd4khjq5m::::res://entities/skeleton/skeleton.tscn
+::res://interface/::1724623255
+::res://interface/menu/::1724718777
+main_menu.tscn::PackedScene::6875466638271703157::1724718777::0::1::::<><>::uid://bmhlr2p7utr0u::::res://background/winter_background.tscn
+::res://levels/::1724718777
+island_t_1.tscn::PackedScene::5829164221144171535::1724718777::0::1::::<><>::uid://bjm5npwam2qee::::res://levels/winter_level.tscn<>uid://n3x4y7erq8ig::::res://collectables/coin/collectable_coin.tscn<>uid://1sywd4khjq5m::::res://entities/skeleton/skeleton.tscn
 winter_level.tscn::PackedScene::3044738356440932580::1724503918::0::1::::<><>::uid://bmhlr2p7utr0u::::res://background/winter_background.tscn<>uid://ccdex4wprhxq4::::res://terrain/winter_terrain.tscn<>uid://drn01t1016vf4::::res://character/character.tscn
 ::res://management/::1724009111
 global.gd::GDScript::-1::1724009111::0::1::::Global<>Node<>::
-::res://terrain/::1724619587
+::res://terrain/::1724718777
 Terrain (16 x 16).png::CompressedTexture2D::4008793139598251841::1723894231::1724615532::1::::<><>::
-winter_terrain.tscn::PackedScene::4919697687022727361::1724619587::0::1::::<><>::uid://bxd5iclrqq242::::res://terrain/Terrain (16 x 16).png
+winter_terrain.tscn::PackedScene::4919697687022727361::1724718777::0::1::::<><>::uid://bxd5iclrqq242::::res://terrain/Terrain (16 x 16).png
 ::res://visual_effects/::1724008411
 ::res://visual_effects/Bright_Sparkle/::1724615532
 1.png::CompressedTexture2D::5268594650221865985::1724008264::1724615532::1::::<><>::
