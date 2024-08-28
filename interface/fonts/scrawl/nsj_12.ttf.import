@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://durtnc0bh7ls6"
-path="res://.godot/imported/njo_14.ttf-84892e1ae5a203b972876f5dc780f8cd.fontdata"
+uid="uid://cxu2vtaotchpf"
+path="res://.godot/imported/nsj_12.ttf-756b17d417697fccce8a2b9615da0d15.fontdata"
 
 [deps]
 
-source_file="res://fonts/old_style/njo_14.ttf"
-dest_files=["res://.godot/imported/njo_14.ttf-84892e1ae5a203b972876f5dc780f8cd.fontdata"]
+source_file="res://interface/fonts/scrawl/nsj_12.ttf"
+dest_files=["res://.godot/imported/nsj_12.ttf-756b17d417697fccce8a2b9615da0d15.fontdata"]
 
 [params]
 

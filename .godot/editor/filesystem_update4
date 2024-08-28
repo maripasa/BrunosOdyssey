@@ -5,5 +5,6 @@ res://entities/skeleton/skeleton.tscn
 res://terrain/winter_terrain.tscn
 res://interface/menu/main_menu.tscn
 res://background/winter_background.tscn
-res://character/character.gd
 res://levels/winter_level.tscn
+res://interface/menu/menu_background.tscn
+res://interface/menu/menu_background.gd

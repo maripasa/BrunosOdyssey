@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyo47f2smrmw1"]
+
+[ext_resource type="Texture2D" uid="uid://cyjpnp5kld7f5" path="res://background/additional_sky.png" id="1_ddwi1"]
+[ext_resource type="Script" path="res://interface/menu/menu_background.gd" id="1_v83w5"]
+[ext_resource type="Texture2D" uid="uid://b47lwqr2g474o" path="res://background/additional_ground.png" id="2_4nrfc"]
+[ext_resource type="Texture2D" uid="uid://ckvp75d0jesnh" path="res://background/3 - Big_mountain_BG.png" id="3_23ywf"]
+[ext_resource type="Texture2D" uid="uid://cvsxpro7ryi2a" path="res://background/2 - Smaller_mountains.png" id="4_cm04x"]
+[ext_resource type="Texture2D" uid="uid://cmq2hijx5qwir" path="res://background/1 - Snowy_foreground_area.png" id="5_rf4pw"]
+
+[node name="MenuBackground" type="ParallaxBackground"]
+script = ExtResource("1_v83w5")
+
+[node name="AdditionalSky" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(640, 0)
+
+[node name="TextureRect" type="TextureRect" parent="AdditionalSky"]
+custom_minimum_size = Vector2(495, 360)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ddwi1")
+
+[node name="AdditionalGround" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(640, 360)
+
+[node name="TextureRect" type="TextureRect" parent="AdditionalGround"]
+custom_minimum_size = Vector2(495, 360)
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_4nrfc")
+
+[node name="DefaultBackground" type="ParallaxLayer" parent="."]
+visibility_layer = 2
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="TextureRect" type="TextureRect" parent="DefaultBackground"]
+custom_minimum_size = Vector2(495, 360)
+offset_left = 1.0
+offset_right = 641.0
+offset_bottom = 360.0
+texture = ExtResource("3_23ywf")
+
+[node name="SmallerMountains" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(990, 0)
+
+[node name="TextureRect" type="TextureRect" parent="SmallerMountains"]
+custom_minimum_size = Vector2(495, 360)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_cm04x")
+
+[node name="SmallerMountains2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(990, 0)
+
+[node name="TextureRect" type="TextureRect" parent="SmallerMountains2"]
+custom_minimum_size = Vector2(495, 360)
+offset_left = 495.0
+offset_right = 993.46
+offset_bottom = 360.0
+texture = ExtResource("4_cm04x")
+
+[node name="Foreground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(990, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Foreground"]
+custom_minimum_size = Vector2(495, 360)
+offset_top = -34.0
+offset_right = 495.0
+offset_bottom = 766.0
+texture = ExtResource("5_rf4pw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Foreground2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(990, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Foreground2"]
+custom_minimum_size = Vector2(495, 800)
+offset_left = 495.0
+offset_top = -34.0
+offset_right = 993.46
+offset_bottom = 766.0
+texture = ExtResource("5_rf4pw")
+metadata/_edit_use_anchors_ = true
