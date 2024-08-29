@@ -14,4 +14,4 @@
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="WaterLayer" type="Node2D" parent="."]
+[node name="KillBox" type="Node2D" parent="."]

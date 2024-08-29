@@ -1,31 +1,290 @@
-[gd_scene load_steps=4 format=3 uid="uid://c47r6witv22ll"]
+[gd_scene load_steps=17 format=3 uid="uid://c47r6witv22ll"]
 
+[ext_resource type="Script" path="res://interface/menu/main_menu.gd" id="1_ajgdw"]
 [ext_resource type="PackedScene" uid="uid://dyo47f2smrmw1" path="res://interface/menu/menu_background.tscn" id="1_qheb0"]
-[ext_resource type="FontFile" uid="uid://durtnc0bh7ls6" path="res://interface/fonts/old_style/njo_14.ttf" id="2_6qve5"]
+[ext_resource type="Texture2D" uid="uid://c2b0p60iusioq" path="res://interface/menu/left_banner_piece.png" id="2_wcaff"]
+[ext_resource type="Texture2D" uid="uid://b13x5msfrii2u" path="res://interface/menu/middle_banner_piece.png" id="3_0uxbj"]
+[ext_resource type="Texture2D" uid="uid://btwmouyvgwh70" path="res://interface/menu/right_banner_piece.png" id="4_h4p5y"]
+[ext_resource type="FontFile" uid="uid://cxu2vtaotchpf" path="res://interface/fonts/scrawl/nsj_12.ttf" id="5_wlfwo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fi0j0"]
-font = ExtResource("2_6qve5")
-font_size = 14
+line_spacing = 1.0
+font = ExtResource("5_wlfwo")
+font_size = 48
+outline_color = Color(0.151276, 0.151276, 0.151276, 1)
+shadow_color = Color(4.62055e-06, 0.608312, 0.753844, 1)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Animation" id="Animation_ql4ma"]
+length = 0.001
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameTitle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200.5, -320)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ButtonsContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q0fki"]
+resource_name = "start_animation"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameTitle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.5001, 0.5002, 0.55, 0.6, 0.65),
+"transitions": PackedFloat32Array(1, 1, 1, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(200.5, -320), Vector2(200.5, 16), Vector2(200.5, 16), Vector2(200.5, 34), Vector2(200.5, -16), Vector2(200.5, 16), Vector2(200.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ButtonsContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.65, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nhjge"]
+_data = {
+"RESET": SubResource("Animation_ql4ma"),
+"start_animation": SubResource("Animation_q0fki")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i03v5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gx0t2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51pxv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u13qj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ks1sb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_53ebx"]
+font = ExtResource("5_wlfwo")
+font_size = 24
 font_color = Color(0, 0, 0, 1)
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("_animation")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ajgdw")
+_animation = NodePath("Animation")
 
 [node name="WinterBackground" parent="." instance=ExtResource("1_qheb0")]
 
-[node name="Label" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 291.0
-offset_top = 95.0
-offset_right = 351.0
-offset_bottom = 126.0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0.415686)
+
+[node name="Banner" type="Node2D" parent="."]
+position = Vector2(653, 10)
+
+[node name="TextureRect" type="TextureRect" parent="Banner"]
+offset_right = 23.0
+offset_bottom = 17.0
+texture = ExtResource("2_wcaff")
+
+[node name="TextureRect2" type="TextureRect" parent="Banner"]
+offset_left = 23.0
+offset_right = 55.0
+offset_bottom = 12.0
+texture = ExtResource("3_0uxbj")
+
+[node name="TextureRect3" type="TextureRect" parent="Banner"]
+offset_left = 55.0
+offset_right = 78.0
+offset_bottom = 17.0
+texture = ExtResource("4_h4p5y")
+
+[node name="GameTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.5
+offset_top = -320.0
+offset_right = 119.5
+offset_bottom = -205.0
+grow_horizontal = 2
 text = "Penguin
 Journey"
 label_settings = SubResource("LabelSettings_fi0j0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nhjge")
+}
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -192.0
+offset_right = 80.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="NewGame" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.61339, 0.61339, 0.61339, 1)
+theme_override_colors/font_pressed_color = Color(0.206035, 0.434082, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_wlfwo")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i03v5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gx0t2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51pxv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u13qj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ks1sb")
+text = "Novo Jogo"
+flat = true
+
+[node name="Shadow" type="Label" parent="ButtonsContainer/NewGame"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Novo Jogo"
+label_settings = SubResource("LabelSettings_53ebx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreBoard" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.61339, 0.61339, 0.61339, 1)
+theme_override_colors/font_pressed_color = Color(0.206035, 0.434082, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_wlfwo")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i03v5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gx0t2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51pxv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u13qj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ks1sb")
+text = "Placar"
+flat = true
+
+[node name="Shadow" type="Label" parent="ButtonsContainer/ScoreBoard"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Placar"
+label_settings = SubResource("LabelSettings_53ebx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewGame3" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.61339, 0.61339, 0.61339, 1)
+theme_override_colors/font_pressed_color = Color(0.206035, 0.434082, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_wlfwo")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i03v5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gx0t2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51pxv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u13qj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ks1sb")
+text = "Créditos"
+flat = true
+
+[node name="Shadow" type="Label" parent="ButtonsContainer/NewGame3"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Créditos"
+label_settings = SubResource("LabelSettings_53ebx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.61339, 0.61339, 0.61339, 1)
+theme_override_colors/font_pressed_color = Color(0.206035, 0.434082, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_wlfwo")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i03v5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gx0t2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51pxv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u13qj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ks1sb")
+text = "Sair"
+flat = true
+
+[node name="Shadow" type="Label" parent="ButtonsContainer/Quit"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sair"
+label_settings = SubResource("LabelSettings_53ebx")
 horizontal_alignment = 1
 vertical_alignment = 1
