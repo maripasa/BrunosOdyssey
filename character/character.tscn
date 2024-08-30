@@ -1,15 +1,15 @@
 [gd_scene load_steps=23 format=3 uid="uid://b31o0nbftwuxg"]
 
-[ext_resource type="Texture2D" uid="uid://cjclk3fnn4okp" path="res://character/idle/1.png" id="1_hulob"]
+[ext_resource type="Texture2D" uid="uid://dkklgmnksib1d" path="res://character/Idle/1.png" id="1_hulob"]
 [ext_resource type="Script" path="res://character/character.gd" id="1_pcopu"]
-[ext_resource type="Texture2D" uid="uid://75mrj84ovcee" path="res://character/idle/2.png" id="2_n5g3r"]
+[ext_resource type="Texture2D" uid="uid://sdubkybaxkkj" path="res://character/Idle/2.png" id="2_n5g3r"]
 [ext_resource type="Texture2D" uid="uid://fs78478hdewo" path="res://character/Lying_On_Ground/1.png" id="2_o7ka3"]
-[ext_resource type="Texture2D" uid="uid://wmgirrmrwnpb" path="res://character/idle/3.png" id="3_pcfar"]
+[ext_resource type="Texture2D" uid="uid://d3fd2fk7kj06e" path="res://character/Idle/3.png" id="3_pcfar"]
 [ext_resource type="Texture2D" uid="uid://turn1ndsoxyy" path="res://character/Ducking/1.png" id="3_wklbv"]
-[ext_resource type="Texture2D" uid="uid://dpoi8ugb4m85o" path="res://character/idle/4.png" id="4_oa5kf"]
+[ext_resource type="Texture2D" uid="uid://dwmu7bnu8nu72" path="res://character/Idle/4.png" id="4_oa5kf"]
 [ext_resource type="Texture2D" uid="uid://b88pnx2veg2cj" path="res://character/Falling/1.png" id="4_qp5eq"]
 [ext_resource type="Texture2D" uid="uid://cq51pnn7gfmdr" path="res://character/Hurt/1.png" id="5_7s1pl"]
-[ext_resource type="Texture2D" uid="uid://7l4mmjjsv06m" path="res://character/idle/5.png" id="5_pj6yb"]
+[ext_resource type="Texture2D" uid="uid://dwhp7pe6eybp1" path="res://character/Idle/5.png" id="5_pj6yb"]
 [ext_resource type="Texture2D" uid="uid://xbfo3bmx7rhv" path="res://character/run/1.png" id="9_hbdpt"]
 [ext_resource type="Texture2D" uid="uid://34qrichsrury" path="res://character/run/2.png" id="10_6g88c"]
 [ext_resource type="Texture2D" uid="uid://dg816qsi5x37e" path="res://character/Jump/1.png" id="11_dccam"]
@@ -149,6 +149,7 @@ wait_time = 0.4
 one_shot = true
 
 [node name="CharacterCamera" type="Camera2D" parent="."]
+offset = Vector2(0, -64)
 
 [connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
 [connection signal="frame_changed" from="Texture" to="Texture" method="_on_frame_changed"]
