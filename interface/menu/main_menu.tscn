@@ -150,6 +150,7 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_nhjge")
 }
+autoplay = "start_animation"
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

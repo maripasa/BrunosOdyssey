@@ -23,4 +23,4 @@ position = Vector2(119, 254)
 _enemy_type = 2
 
 [node name="KillArea" parent="KillBox" index="0" instance=ExtResource("4_cq84r")]
-position = Vector2(290, 290)
+position = Vector2(67, 343)
