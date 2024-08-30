@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://btvgui21k5w5p"]
+
+[ext_resource type="Script" path="res://interectables/kill_area.gd" id="1_y8kp5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cg34g"]
+size = Vector2(66, 20)
+
+[node name="KillArea" type="Area2D" node_paths=PackedStringArray("_time_to_kill")]
+script = ExtResource("1_y8kp5")
+_time_to_kill = NodePath("TimerToKill")
+
+[node name="Collsion" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_cg34g")
+
+[node name="TimerToKill" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="TimerToKill" to="." method="_on_timer_to_kill_timeout"]

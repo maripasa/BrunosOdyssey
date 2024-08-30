@@ -112,13 +112,14 @@ size = Vector2(11, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xu88w"]
 size = Vector2(11, 2)
 
-[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_character_texture", "_knockback_timer")]
+[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_character_texture", "_knockback_timer", "_character_camera")]
 script = ExtResource("1_pcopu")
 _speed = 100.0
 _high_fall_threshold = 70.0
 _knockback_speed = 50
 _character_texture = NodePath("Texture")
 _knockback_timer = NodePath("KnockbackTimer")
+_character_camera = NodePath("CharacterCamera")
 
 [node name="Texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("_character")]
 sprite_frames = SubResource("SpriteFrames_dedwu")

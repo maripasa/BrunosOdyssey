@@ -21,7 +21,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export_category("Objects")
 @export var _character_texture: CharacterTexture
 @export var _knockback_timer: Timer
+@export var _character_camera: Camera2D
+
 @onready var fall_timer: Timer = $FallTimer
+
+func disable() -> void:
+	_is_alive = false
+	velocity.x = 0
+	_character_camera.limit_bottom = int(global_position.y) + int(360.0/2.0)
 
 func _process(_delta: float) -> void:
 	if _on_knockback:
