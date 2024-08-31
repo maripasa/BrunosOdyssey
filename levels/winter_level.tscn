@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjm5npwam2qee"]
+[gd_scene load_steps=5 format=3 uid="uid://bjm5npwam2qee"]
 
+[ext_resource type="Script" path="res://levels/winter_level.gd" id="1_ax3i0"]
 [ext_resource type="PackedScene" uid="uid://bmhlr2p7utr0u" path="res://background/winter_background.tscn" id="1_q1j2f"]
 [ext_resource type="PackedScene" uid="uid://ccdex4wprhxq4" path="res://terrain/winter_terrain.tscn" id="2_42hfr"]
 [ext_resource type="PackedScene" uid="uid://b31o0nbftwuxg" path="res://character/character.tscn" id="3_4msi5"]
 
 [node name="WinterLevel" type="Node2D"]
+script = ExtResource("1_ax3i0")
+_scene_path = "res://levels/winter_level.tscn"
 
 [node name="WinterBackground" parent="." instance=ExtResource("1_q1j2f")]
 

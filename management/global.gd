@@ -1,6 +1,8 @@
 extends Node
 class_name Global
 
+var current_scene_path: String
+
 func spawn_effect(_path: String, _offset: Vector2, _initial_position: Vector2,
 _is_flipped: bool) -> void:
 	

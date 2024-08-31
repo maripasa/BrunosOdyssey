@@ -1,0 +1,262 @@
+[gd_scene load_steps=16 format=3 uid="uid://gagu1il84uhp"]
+
+[ext_resource type="Script" path="res://interface/transition_screen/transition_screen.gd" id="1_1ny52"]
+[ext_resource type="Texture2D" uid="uid://btw24mytagerm" path="res://character/Waddling/1.png" id="2_2avgr"]
+[ext_resource type="Texture2D" uid="uid://dqq356gms0pcv" path="res://character/Waddling/2.png" id="3_3tc2q"]
+[ext_resource type="Texture2D" uid="uid://bagd0qaunqday" path="res://character/Waddling/3.png" id="4_hbfdx"]
+[ext_resource type="Texture2D" uid="uid://bu7mcetq1i4h0" path="res://character/Waddling/4.png" id="5_6okp1"]
+[ext_resource type="Texture2D" uid="uid://piyqse3h2ynr" path="res://character/Waddling/5.png" id="6_6ojr8"]
+[ext_resource type="Texture2D" uid="uid://bmhxjqt7ucpji" path="res://character/Waddling/6.png" id="7_iouna"]
+[ext_resource type="FontFile" uid="uid://c25pho1qu8uej" path="res://interface/fonts/scrawl/njs_9.ttf" id="8_exyr8"]
+
+[sub_resource type="Animation" id="Animation_2o8tk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UP:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DOWN:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 360)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RunningCharacter:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vkaf3"]
+resource_name = "fade_in"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UP:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, -180), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DOWN:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector2(0, 360), Vector2(0, 180)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RunningCharacter:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_seqsg"]
+resource_name = "fade_out"
+length = 1.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UP:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 1.4),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DOWN:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 1.4),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Vector2(0, 180), Vector2(0, 360)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RunningCharacter:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 0.95),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_002gf"]
+_data = {
+"RESET": SubResource("Animation_2o8tk"),
+"fade_in": SubResource("Animation_vkaf3"),
+"fade_out": SubResource("Animation_seqsg")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qnr7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2avgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3tc2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hbfdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6okp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6ojr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_iouna")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d7ccw"]
+line_spacing = 1.0
+font = ExtResource("8_exyr8")
+font_size = 9
+outline_color = Color(0.151276, 0.151276, 0.151276, 1)
+shadow_size = 0
+shadow_color = Color(0, 0.607843, 0.752941, 0)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gitsd"]
+line_spacing = 1.0
+font = ExtResource("8_exyr8")
+font_size = 9
+font_color = Color(0, 0.607843, 0.752941, 1)
+outline_color = Color(0.151276, 0.151276, 0.151276, 1)
+shadow_size = 0
+shadow_color = Color(0, 0.607843, 0.752941, 0)
+shadow_offset = Vector2(0, 4)
+
+[node name="TransitionScreen" type="CanvasLayer" node_paths=PackedStringArray("_animation")]
+layer = 2
+script = ExtResource("1_1ny52")
+_animation = NodePath("Animation")
+
+[node name="UP" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(640, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DOWN" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(640, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_002gf")
+}
+autoplay = "fade_out"
+
+[node name="RunningCharacter" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(56, 305)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qnr7g")
+autoplay = "default"
+
+[node name="GameTitle" type="Label" parent="RunningCharacter"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 2.5
+offset_top = -10.5
+offset_right = 52.5
+offset_bottom = 8.5
+grow_horizontal = 2
+text = "Penguin
+Journey"
+label_settings = SubResource("LabelSettings_d7ccw")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Shadow" type="Label" parent="RunningCharacter/GameTitle"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 1.0
+offset_right = 26.0
+offset_bottom = 20.0
+grow_horizontal = 2
+text = "Penguin
+Journey"
+label_settings = SubResource("LabelSettings_gitsd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]
