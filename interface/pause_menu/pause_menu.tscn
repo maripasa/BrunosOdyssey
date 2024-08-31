@@ -37,17 +37,10 @@ font_size = 24
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0ask"]
 
-[node name="PauseMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_jp263")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
 offset_top = 1.0
 offset_right = 640.0
 offset_bottom = 361.0
@@ -74,7 +67,6 @@ offset_bottom = 17.0
 texture = ExtResource("4_l3ytg")
 
 [node name="PauseTitle" type="Label" parent="."]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -89,7 +81,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -163,7 +154,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Music" type="Label" parent="."]
-layout_mode = 2
 offset_left = 257.0
 offset_top = 237.0
 offset_right = 417.0

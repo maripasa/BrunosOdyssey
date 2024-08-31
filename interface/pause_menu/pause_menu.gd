@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 class_name PauseMenu
 
 @export_category("Objects")
