@@ -29,7 +29,8 @@ func disable() -> void:
 	_is_alive = false
 	velocity.x = 0
 	_character_camera.limit_bottom = int(global_position.y) + int(360.0/2.0)
-
+	transition_screen.fade_in(global.current_scene_path)
+	
 func _process(_delta: float) -> void:
 	if _on_knockback:
 		move_and_slide()
@@ -103,6 +104,7 @@ func update_health(_value: int, _entity) -> void:
 	if _character_health <= 0:
 		_is_alive = false
 		_character_texture.action_animation("dead_hit")
+		transition_screen.fade_in("res://interface/menu/main_menu.tscn")
 		return
 	
 	_character_texture.action_animation("hit")

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://btvgui21k5w5p" path="res://interectables/kill_area.tscn" id="4_cq84r"]
 
 [node name="IslandT1" instance=ExtResource("1_u7yrv")]
+_scene_path = "res://levels/island_t_1.tscn"
 
 [node name="WinterTerrain" parent="." index="1"]
 scale = Vector2(1, 1)
