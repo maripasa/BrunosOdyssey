@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cfv1k3pc4w8dp"]
+[gd_scene load_steps=16 format=3 uid="uid://cfv1k3pc4w8dp"]
 
-[ext_resource type="Script" path="res://interface/menu/main_menu.gd" id="1_alm24"]
+[ext_resource type="Script" path="res://interface/pause_menu/pause_menu.gd" id="1_jp263"]
 [ext_resource type="Texture2D" uid="uid://c2b0p60iusioq" path="res://interface/menu/left_banner_piece.png" id="2_m2ui4"]
 [ext_resource type="Texture2D" uid="uid://b13x5msfrii2u" path="res://interface/menu/middle_banner_piece.png" id="3_x62yf"]
 [ext_resource type="Texture2D" uid="uid://btwmouyvgwh70" path="res://interface/menu/right_banner_piece.png" id="4_l3ytg"]
@@ -33,15 +33,18 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("5_amm44")
 font_size = 24
 
-[node name="PauseMenu" type="Control" node_paths=PackedStringArray("_animation")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydymk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0ask"]
+
+[node name="PauseMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_alm24")
-_animation = NodePath("")
+script = ExtResource("1_jp263")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -76,9 +79,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -119.0
-offset_top = 104.0
+offset_top = 84.0
 offset_right = 120.0
-offset_bottom = 153.0
+offset_bottom = 133.0
 grow_horizontal = 2
 text = "PAUSED"
 label_settings = SubResource("LabelSettings_fi0j0")
@@ -93,9 +96,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -80.0
-offset_top = -15.5
+offset_top = -35.5
 offset_right = 80.0
-offset_bottom = 103.5
+offset_bottom = 83.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -161,10 +164,10 @@ vertical_alignment = 1
 
 [node name="Music" type="Label" parent="."]
 layout_mode = 2
-offset_left = 240.0
-offset_top = 314.5
-offset_right = 400.0
-offset_bottom = 339.5
+offset_left = 257.0
+offset_top = 237.0
+offset_right = 417.0
+offset_bottom = 262.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "  Música"
@@ -173,10 +176,12 @@ vertical_alignment = 1
 
 [node name="MusicButton" type="CheckButton" parent="Music"]
 layout_mode = 2
-offset_left = -17.0
-offset_top = -1.5
-offset_right = 143.0
-offset_bottom = 29.5
+offset_left = -78.0
+offset_top = 18.5
+offset_right = 82.0
+offset_bottom = 49.5
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ydymk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l0ask")
 text = "
 "
 flat = true
@@ -198,3 +203,7 @@ text = "Música"
 label_settings = SubResource("LabelSettings_53ebx")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="ButtonsContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="Music/MusicButton" to="." method="_on_music_button_toggled"]
