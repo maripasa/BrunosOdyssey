@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkklgmnksib1d"
-path="res://.godot/imported/1.png-f56fa266812c7c91b3d66dc8e24ef5e6.ctex"
+uid="uid://dkapwoslotusd"
+path="res://.godot/imported/3 - Cloud_cover_1.png-f71996d01ae08a43c728401ec4af0ea7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/Idle/1.png"
-dest_files=["res://.godot/imported/1.png-f56fa266812c7c91b3d66dc8e24ef5e6.ctex"]
+source_file="res://background/1 - Grassland/Background parts/3 - Cloud_cover_1.png"
+dest_files=["res://.godot/imported/3 - Cloud_cover_1.png-f71996d01ae08a43c728401ec4af0ea7.ctex"]
 
 [params]
 
