@@ -1,5 +1,5 @@
 extends ParallaxBackground
-class_name MenuBackground
+class_name EndingBackground
 
 @onready var _foreground: Array = [
 	$SmallerMountains, $SmallerMountains2, $Foreground, $Foreground2

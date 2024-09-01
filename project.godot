@@ -12,12 +12,15 @@ config_version=5
 
 config/name="Penguin Journey reworked"
 run/main_scene="res://levels/island_t_1.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="bruno_oddisey"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 global="*res://management/global.gd"
+game_data="*res://management/game_data.gd"
 transition_screen="*res://interface/transition_screen/transition_screen.tscn"
 
 [display]

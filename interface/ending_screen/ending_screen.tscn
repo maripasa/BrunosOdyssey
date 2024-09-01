@@ -1,0 +1,513 @@
+[gd_scene load_steps=18 format=3 uid="uid://ug5uh83ft8yt"]
+
+[ext_resource type="Script" path="res://interface/menu/main_menu.gd" id="1_6bhvd"]
+[ext_resource type="FontFile" uid="uid://cxu2vtaotchpf" path="res://interface/fonts/scrawl/nsj_12.ttf" id="6_yj0k1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fi0j0"]
+line_spacing = 1.0
+font = ExtResource("6_yj0k1")
+font_size = 48
+outline_color = Color(0.151276, 0.151276, 0.151276, 1)
+shadow_color = Color(4.62055e-06, 0.608312, 0.753844, 1)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="Animation" id="Animation_ql4ma"]
+length = 0.001
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Message:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200.5, -320)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ButtonsContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ScoreTitle:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HighScores:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NameTitle:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q0fki"]
+resource_name = "start_animation"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Message:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.5001, 0.5002, 0.55, 0.6, 0.65),
+"transitions": PackedFloat32Array(1, 1, 1, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(200.5, -320), Vector2(200.5, 16), Vector2(200.5, 16), Vector2(200.5, 34), Vector2(200.5, -16), Vector2(200.5, 16), Vector2(200.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ButtonsContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.65, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HighScores:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.65, 1),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NameTitle:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.65, 1),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ScoreTitle:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.65, 1),
+"transitions": PackedFloat32Array(1, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nhjge"]
+_data = {
+"RESET": SubResource("Animation_ql4ma"),
+"start_animation": SubResource("Animation_q0fki")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i03v5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gx0t2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51pxv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u13qj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ks1sb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_53ebx"]
+font = ExtResource("6_yj0k1")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2s56c"]
+font = ExtResource("6_yj0k1")
+font_size = 24
+font_color = Color(1, 1, 0, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cjo8t"]
+font = ExtResource("6_yj0k1")
+font_size = 24
+font_color = Color(0, 0.494118, 1, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_se8id"]
+font = ExtResource("6_yj0k1")
+font_size = 24
+outline_size = 7
+outline_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ynj3p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oynjq"]
+font = ExtResource("6_yj0k1")
+font_size = 24
+
+[node name="EndingScreen" type="CanvasLayer" node_paths=PackedStringArray("_animation")]
+script = ExtResource("1_6bhvd")
+_animation = NodePath("Animation")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0.717647)
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.5
+offset_top = -320.0
+offset_right = 135.5
+offset_bottom = -205.0
+grow_horizontal = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_fi0j0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nhjge")
+}
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.5
+offset_top = -99.0
+offset_right = 106.5
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SaveScore" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.61339, 0.61339, 0.61339, 1)
+theme_override_colors/font_pressed_color = Color(0.206035, 0.434082, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_yj0k1")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i03v5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gx0t2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51pxv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u13qj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ks1sb")
+text = "Salvar Pontuação"
+flat = true
+
+[node name="Shadow" type="Label" parent="ButtonsContainer/SaveScore"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Salvar Pontuação"
+label_settings = SubResource("LabelSettings_53ebx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.61339, 0.61339, 0.61339, 1)
+theme_override_colors/font_pressed_color = Color(0.206035, 0.434082, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_yj0k1")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i03v5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gx0t2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51pxv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u13qj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ks1sb")
+text = "Sair"
+flat = true
+
+[node name="Shadow" type="Label" parent="ButtonsContainer/Continue"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sair"
+label_settings = SubResource("LabelSettings_53ebx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -243.0
+offset_top = 103.0
+offset_right = -56.0
+offset_bottom = 156.0
+grow_horizontal = 2
+size_flags_vertical = 0
+text = "HIGHSCORE !!!"
+label_settings = SubResource("LabelSettings_2s56c")
+
+[node name="ScoreTitle" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 77.0
+offset_top = 124.0
+offset_right = 177.0
+offset_bottom = 149.0
+text = "SCORE"
+label_settings = SubResource("LabelSettings_cjo8t")
+
+[node name="Score" type="Label" parent="ScoreTitle"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 22.0
+offset_right = 44.0
+offset_bottom = 47.0
+grow_horizontal = 2
+size_flags_vertical = 0
+text = "500000
+"
+label_settings = SubResource("LabelSettings_se8id")
+
+[node name="NameTitle" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 77.0
+offset_top = 188.0
+offset_right = 177.0
+offset_bottom = 213.0
+text = "NAME"
+label_settings = SubResource("LabelSettings_cjo8t")
+
+[node name="NameInput" type="LineEdit" parent="NameTitle"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.0
+offset_top = 18.0
+offset_right = 40.0
+offset_bottom = 51.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("6_yj0k1")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ynj3p")
+placeholder_text = "AAA"
+max_length = 3
+flat = true
+caret_blink = true
+
+[node name="HighScores" type="HBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -56.0
+offset_right = 241.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Placement" type="VBoxContainer" parent="HighScores"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Placement1" type="Label" parent="HighScores/Placement"]
+show_behind_parent = true
+layout_mode = 2
+text = "1ST"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Placement2" type="Label" parent="HighScores/Placement"]
+show_behind_parent = true
+layout_mode = 2
+text = "1ST"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Placement3" type="Label" parent="HighScores/Placement"]
+show_behind_parent = true
+layout_mode = 2
+text = "1ST"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Placement4" type="Label" parent="HighScores/Placement"]
+show_behind_parent = true
+layout_mode = 2
+text = "1ST"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="VBoxContainer" parent="HighScores"]
+layout_mode = 2
+
+[node name="Score1" type="Label" parent="HighScores/Score"]
+show_behind_parent = true
+layout_mode = 2
+text = "50000"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score2" type="Label" parent="HighScores/Score"]
+show_behind_parent = true
+layout_mode = 2
+text = "50000"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score3" type="Label" parent="HighScores/Score"]
+show_behind_parent = true
+layout_mode = 2
+text = "50000"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score4" type="Label" parent="HighScores/Score"]
+show_behind_parent = true
+layout_mode = 2
+text = "50000"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage" type="VBoxContainer" parent="HighScores"]
+layout_mode = 2
+
+[node name="Level1" type="Label" parent="HighScores/Stage"]
+show_behind_parent = true
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level2" type="Label" parent="HighScores/Stage"]
+show_behind_parent = true
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level3" type="Label" parent="HighScores/Stage"]
+show_behind_parent = true
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level4" type="Label" parent="HighScores/Stage"]
+show_behind_parent = true
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NAME" type="VBoxContainer" parent="HighScores"]
+layout_mode = 2
+
+[node name="Name1" type="Label" parent="HighScores/NAME"]
+show_behind_parent = true
+layout_mode = 2
+text = "AAA"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name2" type="Label" parent="HighScores/NAME"]
+show_behind_parent = true
+layout_mode = 2
+text = "AAA"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name3" type="Label" parent="HighScores/NAME"]
+show_behind_parent = true
+layout_mode = 2
+text = "AAA"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name4" type="Label" parent="HighScores/NAME"]
+show_behind_parent = true
+layout_mode = 2
+text = "AAA"
+label_settings = SubResource("LabelSettings_oynjq")
+horizontal_alignment = 1
+vertical_alignment = 1

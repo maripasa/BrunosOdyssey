@@ -1,3 +1,2 @@
 extends CollectableComponent
 class_name CollectableCoin
-
