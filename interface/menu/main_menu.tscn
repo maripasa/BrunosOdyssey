@@ -136,9 +136,8 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -119.5
-offset_top = -320.0
 offset_right = 119.5
-offset_bottom = -205.0
+offset_bottom = 115.0
 grow_horizontal = 2
 text = "Penguin
 Journey"
@@ -197,6 +196,39 @@ label_settings = SubResource("LabelSettings_53ebx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Continue" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.61339, 0.61339, 0.61339, 1)
+theme_override_colors/font_pressed_color = Color(0.206035, 0.434082, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_wlfwo")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i03v5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gx0t2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51pxv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u13qj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ks1sb")
+disabled = true
+text = "Continuar"
+flat = true
+
+[node name="Shadow" type="Label" parent="ButtonsContainer/Continue"]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continuar"
+label_settings = SubResource("LabelSettings_53ebx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ScoreBoard" type="Button" parent="ButtonsContainer"]
 custom_minimum_size = Vector2(160, 40)
 layout_mode = 2
@@ -228,7 +260,7 @@ label_settings = SubResource("LabelSettings_53ebx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NewGame3" type="Button" parent="ButtonsContainer"]
+[node name="Credits" type="Button" parent="ButtonsContainer"]
 custom_minimum_size = Vector2(160, 40)
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.61339, 0.61339, 0.61339, 1)
@@ -244,7 +276,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ks1sb")
 text = "Créditos"
 flat = true
 
-[node name="Shadow" type="Label" parent="ButtonsContainer/NewGame3"]
+[node name="Shadow" type="Label" parent="ButtonsContainer/Credits"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
