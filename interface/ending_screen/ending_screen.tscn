@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://ug5uh83ft8yt"]
 
-[ext_resource type="Script" path="res://interface/menu/main_menu.gd" id="1_6bhvd"]
+[ext_resource type="Script" path="res://interface/ending_screen/ending_screen.gd" id="1_lrhrh"]
 [ext_resource type="FontFile" uid="uid://cxu2vtaotchpf" path="res://interface/fonts/scrawl/nsj_12.ttf" id="6_yj0k1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fi0j0"]
@@ -186,9 +186,8 @@ outline_color = Color(0, 0, 0, 0)
 font = ExtResource("6_yj0k1")
 font_size = 24
 
-[node name="EndingScreen" type="CanvasLayer" node_paths=PackedStringArray("_animation")]
-script = ExtResource("1_6bhvd")
-_animation = NodePath("Animation")
+[node name="EndingScreen" type="CanvasLayer"]
+script = ExtResource("1_lrhrh")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 640.0

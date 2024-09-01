@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 class_name EndingScreen
 
 @export_category("Objects")

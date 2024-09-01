@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 class_name MainMenu
 
 @export_category("Objects")
