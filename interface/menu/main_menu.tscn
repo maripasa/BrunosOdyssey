@@ -101,7 +101,7 @@ _animation = NodePath("Animation")
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
-color = Color(0, 0, 0, 0.415686)
+color = Color(0, 0, 0.67451, 0.541176)
 
 [node name="Banner" type="Node2D" parent="."]
 position = Vector2(653, 10)
