@@ -1,6 +1,12 @@
 extends CharacterBody2D
 class_name BaseCharacter
 
+@export_category("Stats")
+@export var score: int = 0
+@export var last_map: String = ""
+@export var lifes: int = 5
+@export var volume: int = 0
+
 var _jump_count: int = 0
 var _fall_distance: float = 0
 var _fall_start_y: float = 0.0

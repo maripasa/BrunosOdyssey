@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpbxqoou01mlj"]
+
+[ext_resource type="PackedScene" uid="uid://bjm5npwam2qee" path="res://levels/base_level.tscn" id="1_rwxfe"]
+[ext_resource type="PackedScene" uid="uid://n3x4y7erq8ig" path="res://collectables/coin/collectable_coin.tscn" id="2_s52eg"]
+[ext_resource type="PackedScene" uid="uid://1sywd4khjq5m" path="res://entities/skeleton/skeleton.tscn" id="3_bplol"]
+[ext_resource type="PackedScene" uid="uid://btvgui21k5w5p" path="res://interectables/kill_area.tscn" id="4_dmqjn"]
+
+[node name="WinterLevel" instance=ExtResource("1_rwxfe")]
+_scene_path = "res://levels/island_t_1.tscn"
+
+[node name="Character" parent="." index="2"]
+position = Vector2(244, 285)
+
+[node name="CollectableCoin" parent="." index="3" instance=ExtResource("2_s52eg")]
+position = Vector2(162, 261)
+
+[node name="Skeleton" parent="Enemies" index="0" instance=ExtResource("3_bplol")]
+position = Vector2(119, 254)
+_enemy_type = 2
+
+[node name="KillArea" parent="KillBox" index="0" instance=ExtResource("4_dmqjn")]
+position = Vector2(67, 343)
