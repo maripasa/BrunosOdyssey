@@ -136,8 +136,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -119.5
+offset_top = -320.0
 offset_right = 119.5
-offset_bottom = 115.0
+offset_bottom = -205.0
 grow_horizontal = 2
 text = "Penguin
 Journey"
@@ -321,3 +322,9 @@ text = "Sair"
 label_settings = SubResource("LabelSettings_53ebx")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="ButtonsContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="ButtonsContainer/ScoreBoard" to="." method="_on_score_board_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Quit" to="." method="_on_quit_pressed"]

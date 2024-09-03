@@ -152,6 +152,8 @@ one_shot = true
 [node name="CharacterCamera" type="Camera2D" parent="."]
 offset = Vector2(0, -64)
 
+[node name="NextLevelTimer" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
 [connection signal="frame_changed" from="Texture" to="Texture" method="_on_frame_changed"]
 [connection signal="body_entered" from="AttackArea" to="AttackArea" method="_on_body_entered"]
