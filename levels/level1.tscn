@@ -6,7 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://btvgui21k5w5p" path="res://interectables/kill_area.tscn" id="4_dmqjn"]
 
 [node name="WinterLevel" instance=ExtResource("1_rwxfe")]
-_scene_path = "res://levels/island_t_1.tscn"
+_scene_path = "res://levels/level1.tscn"
+
+[node name="Terrain" parent="." index="1"]
+scale = Vector2(1, 1)
+layer_0/tile_data = PackedInt32Array(1245187, 589824, 3, 1245188, 655360, 3, 1245217, 851968, 3, 1245216, 786432, 3, 1245215, 655360, 3, 1245214, 786432, 3, 1245213, 655360, 3, 1245212, 786432, 3, 1245211, 786432, 3, 1245210, 786432, 3, 1245209, 786432, 3, 1245208, 655360, 3, 1245207, 786432, 3, 1245206, 786432, 3, 1245205, 786432, 3, 1245204, 655360, 3, 1245203, 786432, 3, 1245202, 786432, 3, 1245201, 786432, 3, 1245200, 786432, 3, 1245199, 786432, 3, 1245198, 786432, 3, 1245197, 655360, 3, 1245196, 655360, 3, 1245195, 655360, 3, 1245194, 786432, 3, 1245193, 786432, 3, 1245192, 786432, 3, 1245191, 655360, 3, 1245190, 786432, 3, 1245189, 786432, 3)
 
 [node name="Character" parent="." index="2"]
 position = Vector2(244, 285)
@@ -19,4 +23,7 @@ position = Vector2(119, 254)
 _enemy_type = 2
 
 [node name="KillArea" parent="KillBox" index="0" instance=ExtResource("4_dmqjn")]
-position = Vector2(67, 343)
+position = Vector2(17, 322)
+
+[node name="NextLevelArea" parent="." index="7"]
+position = Vector2(532, 269)

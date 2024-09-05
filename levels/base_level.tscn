@@ -1,20 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjm5npwam2qee"]
+[gd_scene load_steps=8 format=3 uid="uid://bjm5npwam2qee"]
 
 [ext_resource type="Script" path="res://levels/base_level.gd" id="1_ax3i0"]
-[ext_resource type="PackedScene" uid="uid://bmhlr2p7utr0u" path="res://background/winter_background.tscn" id="1_q1j2f"]
+[ext_resource type="PackedScene" uid="uid://bmhlr2p7utr0u" path="res://background/default_background.tscn" id="1_q1j2f"]
 [ext_resource type="PackedScene" uid="uid://ccdex4wprhxq4" path="res://terrain/winter_terrain.tscn" id="2_42hfr"]
 [ext_resource type="PackedScene" uid="uid://b31o0nbftwuxg" path="res://character/character.tscn" id="3_4msi5"]
+[ext_resource type="PackedScene" uid="uid://cfv1k3pc4w8dp" path="res://interface/pause_menu/pause_menu.tscn" id="5_f2alf"]
+[ext_resource type="PackedScene" uid="uid://oou6h2a3qebp" path="res://interectables/next_level_area.tscn" id="6_7xhwi"]
+[ext_resource type="PackedScene" uid="uid://b8bi4m5w0jtpx" path="res://interface/HUD/hud.tscn" id="7_lp0go"]
 
-[node name="BaseLevel" type="Node2D"]
+[node name="BaseLevel" type="Node2D" node_paths=PackedStringArray("_pause_menu")]
 script = ExtResource("1_ax3i0")
 _scene_path = "res://levels/winter_level.tscn"
+_pause_menu = NodePath("PauseMenu")
 
 [node name="Background" parent="." instance=ExtResource("1_q1j2f")]
 
 [node name="Terrain" parent="." instance=ExtResource("2_42hfr")]
 
-[node name="Character" parent="." instance=ExtResource("3_4msi5")]
+[node name="Character" parent="." node_paths=PackedStringArray("_hud") instance=ExtResource("3_4msi5")]
+_hud = NodePath("../HUD")
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="KillBox" type="Node2D" parent="."]
+
+[node name="PauseMenu" parent="." node_paths=PackedStringArray("main") instance=ExtResource("5_f2alf")]
+visible = false
+main = NodePath("..")
+
+[node name="NextLevelArea" parent="." node_paths=PackedStringArray("_character") instance=ExtResource("6_7xhwi")]
+_character = NodePath("../Character")
+
+[node name="HUD" parent="." instance=ExtResource("7_lp0go")]

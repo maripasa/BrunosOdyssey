@@ -3,9 +3,10 @@ class_name BaseCharacter
 
 @export_category("Stats")
 @export var score: int = 0
-@export var last_map: String = ""
-@export var lifes: int = 5
-@export var volume: int = 0
+@export var coins: int = 0
+@export var map: int = 1
+@export var lives: int = 5
+@export var health: int = 5
 
 var _jump_count: int = 0
 var _fall_distance: float = 0
@@ -14,6 +15,7 @@ var _on_knockback: bool = false
 var _is_alive: bool = true
 var _on_floor: bool
 var _is_falling: bool
+var _next_level: bool = false
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -21,24 +23,37 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var _speed: float = 200.0
 @export var _jump_velocity: float = -300.0
 @export var _high_fall_threshold: float = 100.0
-@export var _character_health: int = 10
 @export var _knockback_speed: int = 200
 
 @export_category("Objects")
 @export var _character_texture: CharacterTexture
 @export var _knockback_timer: Timer
 @export var _character_camera: Camera2D
-
-@onready var fall_timer: Timer = $FallTimer
+@export var _hud: HUD
 
 func disable() -> void:
 	_is_alive = false
 	velocity.x = 0
 	_character_camera.limit_bottom = int(global_position.y) + int(360.0/2.0)
+	
+	lives -= 1
+	game_data.save["score"] = score
+	game_data.save["coins"] = coins
+	game_data.save["map"] = map
+	game_data.save["lives"] = lives
+	
 	transition_screen.fade_in(global.current_scene_path)
 
 func next_level() -> void:
-	velocity.x = 1 * _speed
+	_next_level = true
+	_character_camera.limit_right = int(global_position.x) + int(640.0/2.0)
+
+func _ready() -> void:
+	score = game_data.save["score"]
+	coins = game_data.save["coins"]
+	map = game_data.save["map"]
+	lives = game_data.save["lives"]
+	_hud.update_stats(lives, health, coins, score)
 
 func _process(_delta: float) -> void:
 	if _on_knockback:
@@ -46,10 +61,15 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	_vertical_movement(_delta)
+	
 	if not _is_alive or _on_knockback:
 		move_and_slide()
 		return
-		
+	if _next_level:
+		velocity.x = 1 * _speed
+		move_and_slide()
+		return
+	
 	_horizontal_movement(_delta)
 	move_and_slide()
 	
@@ -69,7 +89,7 @@ func _vertical_movement(_delta: float) -> void:
 				_character_texture.action_animation("duck")
 				global.spawn_effect(
 					"res://visual_effects/cloud_poof/fall_effect.tscn",
-					Vector2(0, 16),
+					Vector2(0, 0),
 					global_position,
 					false)
 				set_physics_process(false)
@@ -108,13 +128,28 @@ func _horizontal_movement(_delta: float) -> void:
 func update_health(_value: int, _entity) -> void:
 	_knockback(_entity)
 	_knockback_timer.start()
-	_character_health -= _value
+	health -= _value
 	
-	if _character_health <= 0:
+	if health <= 0:
 		_is_alive = false
 		_character_texture.action_animation("dead_hit")
+		_hud.update_stats(lives, 0, coins, score)
+		
+		lives -= 1
+		
+		game_data.save["score"] = score
+		game_data.save["coins"] = coins
+		game_data.save["map"] = map
+		game_data.save["lives"] = lives
+		
+		if lives == 0:
+			transition_screen.fade_in("res://interface/ending_screen/ending_screen.tscn")
+			return
+
+		transition_screen.fade_in(global.current_scene_path)
 		return
 	
+	_hud.update_stats(lives, health, coins, score)
 	_character_texture.action_animation("hit")
 	
 func _knockback(_entity: BaseEnemy) -> void:
@@ -122,7 +157,6 @@ func _knockback(_entity: BaseEnemy) -> void:
 	velocity.x = _knockback_direction.x * _knockback_speed
 	velocity.y = -1 * _knockback_speed
 	_on_knockback = true
-
 
 func _on_knockback_timer_timeout() -> void:
 	_on_knockback = false

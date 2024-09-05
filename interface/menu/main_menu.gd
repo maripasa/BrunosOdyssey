@@ -12,7 +12,7 @@ func _on_level_start() -> void:
 
 
 func _on_new_game_pressed() -> void:
-	transition_screen.fade_in("res://levels/island_t_1.tscn")
+	transition_screen.fade_in("res://levels/level1.tscn")
 
 
 func _on_continue_pressed() -> void:

@@ -9,6 +9,7 @@ var scene_path: String
 
 func fade_in(next_scene_path: String) -> void:
 	scene_path = next_scene_path
+	game_data.save_game()
 	_animation.play("fade_in")
 
 func _on_animation_animation_finished(_anim_name: String) -> void:
