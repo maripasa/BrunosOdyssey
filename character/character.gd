@@ -39,9 +39,11 @@ func disable() -> void:
 	lives -= 1
 	game_data.save["score"] = score
 	game_data.save["coins"] = coins
-	game_data.save["map"] = map
+	game_data.save["level"] = map
 	game_data.save["lives"] = lives
-	
+	if lives <= 0:
+		transition_screen.fade_in("res://interface/ending_screen/ending_screen.tscn")
+		return
 	transition_screen.fade_in(global.current_scene_path)
 
 func next_level() -> void:
@@ -49,15 +51,16 @@ func next_level() -> void:
 	_character_camera.limit_right = int(global_position.x) + int(640.0/2.0)
 
 func _ready() -> void:
+	_hud.timer_end.connect(disable)
 	score = game_data.save["score"]
 	coins = game_data.save["coins"]
-	map = game_data.save["map"]
 	lives = game_data.save["lives"]
 	_hud.update_stats(lives, health, coins, score)
 
 func _process(_delta: float) -> void:
 	if _on_knockback:
 		move_and_slide()
+	_hud.update_stats(lives, health, coins, score)
 
 func _physics_process(_delta: float) -> void:
 	_vertical_movement(_delta)
@@ -69,7 +72,7 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = 1 * _speed
 		move_and_slide()
 		return
-	
+		
 	_horizontal_movement(_delta)
 	move_and_slide()
 	
@@ -133,16 +136,15 @@ func update_health(_value: int, _entity) -> void:
 	if health <= 0:
 		_is_alive = false
 		_character_texture.action_animation("dead_hit")
-		_hud.update_stats(lives, 0, coins, score)
 		
 		lives -= 1
 		
 		game_data.save["score"] = score
 		game_data.save["coins"] = coins
-		game_data.save["map"] = map
+		game_data.save["level"] = map
 		game_data.save["lives"] = lives
 		
-		if lives == 0:
+		if lives <= 0:
 			transition_screen.fade_in("res://interface/ending_screen/ending_screen.tscn")
 			return
 
@@ -163,3 +165,7 @@ func _on_knockback_timer_timeout() -> void:
 
 func is_player_alive() -> bool:
 	return _is_alive
+	
+func collect_coin() -> void:
+	coins += 1
+	score += 20

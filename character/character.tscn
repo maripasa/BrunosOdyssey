@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b31o0nbftwuxg"]
+[gd_scene load_steps=24 format=3 uid="uid://b31o0nbftwuxg"]
 
 [ext_resource type="Texture2D" uid="uid://dkklgmnksib1d" path="res://character/Idle/1.png" id="1_hulob"]
 [ext_resource type="Script" path="res://character/character.gd" id="1_pcopu"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dpoa5i5bkmwan" path="res://character/run/6.png" id="14_sdbhe"]
 [ext_resource type="Script" path="res://character/character_texture.gd" id="15_ufchq"]
 [ext_resource type="Script" path="res://character/character_attack_area.gd" id="17_0vtf8"]
+[ext_resource type="PackedScene" uid="uid://b8bi4m5w0jtpx" path="res://interface/HUD/hud.tscn" id="20_uttpf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dedwu"]
 animations = [{
@@ -112,7 +113,7 @@ size = Vector2(11, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xu88w"]
 size = Vector2(11, 2)
 
-[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_character_texture", "_knockback_timer", "_character_camera")]
+[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_character_texture", "_knockback_timer", "_character_camera", "_hud")]
 script = ExtResource("1_pcopu")
 _speed = 100.0
 _high_fall_threshold = 70.0
@@ -120,6 +121,7 @@ _knockback_speed = 50
 _character_texture = NodePath("Texture")
 _knockback_timer = NodePath("KnockbackTimer")
 _character_camera = NodePath("CharacterCamera")
+_hud = NodePath("HUD")
 
 [node name="Texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("_character")]
 sprite_frames = SubResource("SpriteFrames_dedwu")
@@ -149,6 +151,9 @@ one_shot = true
 offset = Vector2(0, -64)
 
 [node name="NextLevelTimer" type="Timer" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("20_uttpf")]
+start_time = 100
 
 [connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
 [connection signal="frame_changed" from="Texture" to="Texture" method="_on_frame_changed"]

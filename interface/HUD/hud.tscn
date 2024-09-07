@@ -131,5 +131,4 @@ offset_right = 30.0
 offset_bottom = 31.0
 grow_horizontal = 2
 size_flags_vertical = 0
-text = "399"
 label_settings = SubResource("LabelSettings_qgueo")

@@ -15,6 +15,7 @@ class_name HUD
 var seconds: int = 0
 var stopped: bool = true
 var time: float = 0.0
+signal timer_end
 
 func _ready() -> void:
 	transition_screen.start_level.connect(_on_level_start)
@@ -25,6 +26,7 @@ func _process(_delta) -> void:
 	time -= _delta
 	if time < 0:
 		stopped = true
+		emit_signal("timer_end")
 		return
 	seconds = int(fmod(time, 600))
 	_seconds.text = "%03d" % seconds

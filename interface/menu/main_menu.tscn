@@ -85,7 +85,7 @@ font = ExtResource("5_wlfwo")
 font_size = 24
 font_color = Color(0, 0, 0, 1)
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("_animation")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("_animation", "_continue", "_continue_shadow")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,6 +94,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ajgdw")
 _animation = NodePath("Animation")
+_continue = NodePath("ButtonsContainer/Continue")
+_continue_shadow = NodePath("ButtonsContainer/Continue/Shadow")
 
 [node name="WinterBackground" parent="." instance=ExtResource("1_qheb0")]
 

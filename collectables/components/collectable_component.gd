@@ -8,4 +8,4 @@ func _on_body_entered(_body) -> void:
 		
 		
 func _consume(_body: BaseCharacter) -> void:
-	pass
+	_body.collect_coin()

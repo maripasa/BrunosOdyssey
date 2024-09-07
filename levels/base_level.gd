@@ -5,11 +5,13 @@ var paused: bool = false
 
 @export_category("Variables")
 @export var _scene_path: String
+@export var _level_number: int
 @export_category("Objects")
 @export var _pause_menu: PauseMenu
 
 func _ready() -> void:
 	global.current_scene_path = _scene_path
+	game_data.save["level"] = _level_number
 
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
