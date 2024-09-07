@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkklgmnksib1d"
-path="res://.godot/imported/1.png-f56fa266812c7c91b3d66dc8e24ef5e6.ctex"
+uid="uid://ksrbnuguk1l8"
+path="res://.godot/imported/3.png-df4806c7f0059dfca2a484556eb8c077.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/Idle/1.png"
-dest_files=["res://.godot/imported/1.png-f56fa266812c7c91b3d66dc8e24ef5e6.ctex"]
+source_file="res://entities/pink_star/idle/3.png"
+dest_files=["res://.godot/imported/3.png-df4806c7f0059dfca2a484556eb8c077.ctex"]
 
 [params]
 

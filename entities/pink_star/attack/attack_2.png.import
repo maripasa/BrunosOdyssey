@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkklgmnksib1d"
-path="res://.godot/imported/1.png-f56fa266812c7c91b3d66dc8e24ef5e6.ctex"
+uid="uid://cks603jp4fbgw"
+path="res://.godot/imported/attack_2.png-872b70a42eb45f5f3bea56c5ad7c7097.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/Idle/1.png"
-dest_files=["res://.godot/imported/1.png-f56fa266812c7c91b3d66dc8e24ef5e6.ctex"]
+source_file="res://entities/pink_star/attack/attack_2.png"
+dest_files=["res://.godot/imported/attack_2.png-872b70a42eb45f5f3bea56c5ad7c7097.ctex"]
 
 [params]
 
