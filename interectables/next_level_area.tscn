@@ -2,19 +2,13 @@
 
 [ext_resource type="Script" path="res://interectables/next_level_area.gd" id="1_v66vu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cg34g"]
-size = Vector2(20, 66)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qo6w0"]
+size = Vector2(8, 23)
 
-[node name="NextLevelArea" type="Area2D" node_paths=PackedStringArray("_time_to_skip")]
+[node name="NextLevelArea" type="Area2D"]
 script = ExtResource("1_v66vu")
-_time_to_skip = NodePath("TimerToSkip")
 
-[node name="Collsion" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_cg34g")
-
-[node name="TimerToSkip" type="Timer" parent="."]
-one_shot = true
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qo6w0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="TimerToSkip" to="." method="_on_timer_to_skip_timeout"]

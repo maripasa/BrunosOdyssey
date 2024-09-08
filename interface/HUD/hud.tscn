@@ -30,14 +30,14 @@ font_size = 24
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("_coins", "_lives", "_score", "_seconds", "_hearts")]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("_coins_label", "_lives_label", "score_label", "seconds_label", "_hearts_label")]
 script = ExtResource("1_h1lrg")
 start_time = 399
-_coins = NodePath("Coins")
-_lives = NodePath("Lives")
-_score = NodePath("Score")
-_seconds = NodePath("Seconds")
-_hearts = NodePath("hearts")
+_coins_label = NodePath("Coins")
+_lives_label = NodePath("Lives")
+score_label = NodePath("Score")
+seconds_label = NodePath("Seconds")
+_hearts_label = NodePath("hearts")
 
 [node name="Lives" type="Label" parent="."]
 anchors_preset = 5
@@ -132,3 +132,4 @@ offset_bottom = 31.0
 grow_horizontal = 2
 size_flags_vertical = 0
 label_settings = SubResource("LabelSettings_qgueo")
+horizontal_alignment = 1

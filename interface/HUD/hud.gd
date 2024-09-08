@@ -4,13 +4,12 @@ class_name HUD
 @export_category("Variables")
 @export var start_time: int
 
-
 @export_category("Objects")
-@export var _coins: Label
-@export var _lives: Label
-@export var _score: Label
-@export var _seconds: Label
-@export var _hearts: TextureProgressBar
+@export var _coins_label: Label
+@export var _lives_label: Label
+@export var score_label: Label
+@export var seconds_label: Label
+@export var _hearts_label: TextureProgressBar
 
 var seconds: int = 0
 var stopped: bool = true
@@ -23,21 +22,20 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	if stopped:
 		return
-	time -= _delta
-	if time < 0:
+	if time <= 0:
 		stopped = true
 		emit_signal("timer_end")
 		return
+	time -= _delta
 	seconds = int(fmod(time, 600))
-	_seconds.text = "%03d" % seconds
+	seconds_label.text = "%d" % seconds
 
 func _on_level_start() -> void:
 	stopped = false
 	time = start_time
 
 func update_stats(lives: int, hearts: int, coins: int, score: int):
-	_lives.text = "x%d" % lives
-	_coins.text = str(coins)
-	_score.text = str(score)
-	_hearts.value = hearts
-		
+	_lives_label.text = "x%d" % lives
+	_coins_label.text = str(coins)
+	score_label.text = str(score)
+	_hearts_label.value = hearts

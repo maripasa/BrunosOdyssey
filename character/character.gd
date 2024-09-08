@@ -4,9 +4,9 @@ class_name BaseCharacter
 @export_category("Stats")
 @export var score: int = 0
 @export var coins: int = 0
-@export var map: int = 1
+@export var level: int = 1
 @export var lives: int = 5
-@export var health: int = 5
+@export var hearts: int = 5
 
 var _jump_count: int = 0
 var _fall_distance: float = 0
@@ -29,7 +29,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var _character_texture: CharacterTexture
 @export var _knockback_timer: Timer
 @export var _character_camera: Camera2D
-@export var _hud: HUD
+@export var hud: HUD
 
 func disable() -> void:
 	_is_alive = false
@@ -39,30 +39,30 @@ func disable() -> void:
 	lives -= 1
 	game_data.save["score"] = score
 	game_data.save["coins"] = coins
-	game_data.save["level"] = map
+	game_data.save["level"] = level
 	game_data.save["lives"] = lives
 	if lives <= 0:
 		transition_screen.fade_in("res://interface/ending_screen/ending_screen.tscn")
 		return
 	transition_screen.fade_in(global.current_scene_path)
-
-func next_level() -> void:
-	_next_level = true
-	_character_camera.limit_right = int(global_position.x) + int(640.0/2.0)
-
+	
 func _ready() -> void:
-	_hud.timer_end.connect(disable)
+	hud.timer_end.connect(disable)
 	score = game_data.save["score"]
 	coins = game_data.save["coins"]
 	lives = game_data.save["lives"]
-	_hud.update_stats(lives, health, coins, score)
+	hud.update_stats(lives, hearts, coins, score)
 
 func _process(_delta: float) -> void:
 	if _on_knockback:
 		move_and_slide()
-	_hud.update_stats(lives, health, coins, score)
+	if not _next_level:
+		hud.update_stats(lives, hearts, coins, score)
 
 func _physics_process(_delta: float) -> void:
+	game_data.save["score"] = score
+	game_data.save["coins"] = coins
+	game_data.save["lives"] = lives
 	_vertical_movement(_delta)
 	
 	if not _is_alive or _on_knockback:
@@ -131,9 +131,9 @@ func _horizontal_movement(_delta: float) -> void:
 func update_health(_value: int, _entity) -> void:
 	_knockback(_entity)
 	_knockback_timer.start()
-	health -= _value
+	hearts -= _value
 	
-	if health <= 0:
+	if hearts <= 0:
 		_is_alive = false
 		_character_texture.action_animation("dead_hit")
 		
@@ -141,7 +141,7 @@ func update_health(_value: int, _entity) -> void:
 		
 		game_data.save["score"] = score
 		game_data.save["coins"] = coins
-		game_data.save["level"] = map
+		game_data.save["level"] = level
 		game_data.save["lives"] = lives
 		
 		if lives <= 0:
@@ -151,7 +151,7 @@ func update_health(_value: int, _entity) -> void:
 		transition_screen.fade_in(global.current_scene_path)
 		return
 	
-	_hud.update_stats(lives, health, coins, score)
+	hud.update_stats(lives, hearts, coins, score)
 	_character_texture.action_animation("hit")
 	
 func _knockback(_entity: BaseEnemy) -> void:
@@ -169,3 +169,7 @@ func is_player_alive() -> bool:
 func collect_coin() -> void:
 	coins += 1
 	score += 20
+	
+func next_level():
+	_next_level = true
+	hud.stopped = true

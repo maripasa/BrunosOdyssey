@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjm5npwam2qee"]
+[gd_scene load_steps=8 format=3 uid="uid://bjm5npwam2qee"]
 
 [ext_resource type="Script" path="res://levels/base_level.gd" id="1_ax3i0"]
 [ext_resource type="PackedScene" uid="uid://bmhlr2p7utr0u" path="res://background/default_background.tscn" id="1_q1j2f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b31o0nbftwuxg" path="res://character/character.tscn" id="3_4msi5"]
 [ext_resource type="PackedScene" uid="uid://cfv1k3pc4w8dp" path="res://interface/pause_menu/pause_menu.tscn" id="5_f2alf"]
 [ext_resource type="PackedScene" uid="uid://oou6h2a3qebp" path="res://interectables/next_level_area.tscn" id="6_7xhwi"]
+[ext_resource type="PackedScene" uid="uid://c44yigyuyfjvo" path="res://interface/between_screen/between_screen.tscn" id="7_i13q4"]
 
 [node name="BaseLevel" type="Node2D" node_paths=PackedStringArray("_pause_menu")]
 script = ExtResource("1_ax3i0")
@@ -20,11 +21,19 @@ _pause_menu = NodePath("PauseMenu")
 
 [node name="KillBox" type="Node2D" parent="."]
 
+[node name="NextLevelArea" parent="." node_paths=PackedStringArray("_character", "_between_screen") instance=ExtResource("6_7xhwi")]
+position = Vector2(301, 204)
+_character = NodePath("../Character")
+_between_screen = NodePath("../BetweenScreen")
+
+[node name="BetweenScreen" parent="." node_paths=PackedStringArray("_character", "_next_level_area") instance=ExtResource("7_i13q4")]
+_character = NodePath("../Character")
+_next_level_area = NodePath("../NextLevelArea")
+
 [node name="Character" parent="." instance=ExtResource("3_4msi5")]
 
 [node name="PauseMenu" parent="." node_paths=PackedStringArray("main") instance=ExtResource("5_f2alf")]
 visible = false
 main = NodePath("..")
 
-[node name="NextLevelArea" parent="." instance=ExtResource("6_7xhwi")]
-position = Vector2(301, 204)
+[connection signal="child_entered_tree" from="NextLevelArea" to="BetweenScreen" method="_on_next_level_area_child_entered_tree"]

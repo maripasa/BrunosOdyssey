@@ -1,0 +1,207 @@
+[gd_scene load_steps=9 format=3 uid="uid://c44yigyuyfjvo"]
+
+[ext_resource type="Script" path="res://interface/between_screen/between_screen.gd" id="1_sj5n3"]
+[ext_resource type="FontFile" uid="uid://cxu2vtaotchpf" path="res://interface/fonts/scrawl/nsj_12.ttf" id="2_eahq5"]
+[ext_resource type="Texture2D" uid="uid://bacr2ab0r5pbf" path="res://interface/between_screen/Clock.png" id="3_efo6s"]
+
+[sub_resource type="Animation" id="Animation_ql4ma"]
+length = 0.001
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackBackground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Message:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/TimePoints:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q0fki"]
+resource_name = "start_animation"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackBackground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Message:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0, 0),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/TimePoints:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1, 2),
+"transitions": PackedFloat32Array(0, 0, 0),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nhjge"]
+_data = {
+"RESET": SubResource("Animation_ql4ma"),
+"start_animation": SubResource("Animation_q0fki")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_fi0j0"]
+line_spacing = 1.0
+font = ExtResource("2_eahq5")
+font_size = 24
+outline_color = Color(0.151276, 0.151276, 0.151276, 1)
+shadow_color = Color(4.62055e-06, 0.608312, 0.753844, 1)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rqiti"]
+line_spacing = 1.0
+font = ExtResource("2_eahq5")
+font_size = 24
+outline_color = Color(0.151276, 0.151276, 0.151276, 1)
+shadow_offset = Vector2(0, 2)
+
+[node name="BetweenScreen" type="CanvasLayer" node_paths=PackedStringArray("_animation", "_time_score_label", "_time")]
+script = ExtResource("1_sj5n3")
+_animation = NodePath("Animation")
+_time_score_label = NodePath("Node2D/TimePoints/TimeScore")
+_time = NodePath("Node2D/TimePoints/Time")
+
+[node name="BlackBackground" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nhjge")
+}
+autoplay = "RESET"
+
+[node name="Node2D" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Message" type="Label" parent="Node2D"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -42.0
+offset_right = 89.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Level Cleared!"
+label_settings = SubResource("LabelSettings_fi0j0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimePoints" type="Control" parent="Node2D"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeValue" type="Label" parent="Node2D/TimePoints"]
+layout_mode = 0
+offset_left = -41.0
+offset_top = -13.0
+offset_right = 29.0
+offset_bottom = 12.0
+size_flags_horizontal = 4
+text = "x 50 :"
+label_settings = SubResource("LabelSettings_rqiti")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="Node2D/TimePoints"]
+layout_mode = 0
+offset_left = -78.0
+offset_top = -13.0
+offset_right = -50.0
+offset_bottom = 12.0
+size_flags_horizontal = 4
+text = "98"
+label_settings = SubResource("LabelSettings_rqiti")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeScore" type="Label" parent="Node2D/TimePoints"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -13.0
+offset_right = 102.0
+offset_bottom = 12.0
+size_flags_horizontal = 4
+text = "2000"
+label_settings = SubResource("LabelSettings_rqiti")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Clock" type="TextureRect" parent="Node2D/TimePoints"]
+layout_mode = 0
+offset_left = -97.0
+offset_top = -5.0
+offset_right = -86.0
+offset_bottom = 6.0
+texture = ExtResource("3_efo6s")
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]

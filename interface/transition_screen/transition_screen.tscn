@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://gagu1il84uhp"]
+[gd_scene load_steps=14 format=3 uid="uid://gagu1il84uhp"]
 
 [ext_resource type="Script" path="res://interface/transition_screen/transition_screen.gd" id="1_1ny52"]
 [ext_resource type="Texture2D" uid="uid://btw24mytagerm" path="res://character/Waddling/1.png" id="2_2avgr"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bu7mcetq1i4h0" path="res://character/Waddling/4.png" id="5_6okp1"]
 [ext_resource type="Texture2D" uid="uid://piyqse3h2ynr" path="res://character/Waddling/5.png" id="6_6ojr8"]
 [ext_resource type="Texture2D" uid="uid://bmhxjqt7ucpji" path="res://character/Waddling/6.png" id="7_iouna"]
-[ext_resource type="FontFile" uid="uid://c25pho1qu8uej" path="res://interface/fonts/scrawl/njs_9.ttf" id="8_exyr8"]
+[ext_resource type="Texture2D" uid="uid://bnrjn5nb5m36r" path="res://interface/transition_screen/game_title.png" id="8_20ho0"]
 
 [sub_resource type="Animation" id="Animation_2o8tk"]
 length = 0.001
@@ -162,29 +162,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_d7ccw"]
-line_spacing = 1.0
-font = ExtResource("8_exyr8")
-font_size = 9
-outline_color = Color(0.151276, 0.151276, 0.151276, 1)
-shadow_size = 0
-shadow_color = Color(0, 0.607843, 0.752941, 0)
-shadow_offset = Vector2(0, 4)
-
-[sub_resource type="LabelSettings" id="LabelSettings_gitsd"]
-line_spacing = 1.0
-font = ExtResource("8_exyr8")
-font_size = 9
-font_color = Color(0, 0.607843, 0.752941, 1)
-outline_color = Color(0.151276, 0.151276, 0.151276, 1)
-shadow_size = 0
-shadow_color = Color(0, 0.607843, 0.752941, 0)
-shadow_offset = Vector2(0, 4)
-
-[node name="TransitionScreen" type="CanvasLayer" node_paths=PackedStringArray("_animation")]
+[node name="TransitionScreen" type="CanvasLayer" node_paths=PackedStringArray("_animation", "_introduction_timer")]
 layer = 2
 script = ExtResource("1_1ny52")
 _animation = NodePath("Animation")
+_introduction_timer = NodePath("IntroductionTransitionTimer")
 
 [node name="UP" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(640, 0)
@@ -192,8 +174,8 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -320.0
-offset_top = -180.0
 offset_right = 320.0
+offset_bottom = 180.0
 grow_horizontal = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
@@ -206,8 +188,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -320.0
+offset_top = -180.0
 offset_right = 320.0
-offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
@@ -221,42 +203,29 @@ autoplay = "fade_out"
 
 [node name="RunningCharacter" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(56, 305)
+position = Vector2(24, 333)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_qnr7g")
 autoplay = "default"
 
-[node name="GameTitle" type="Label" parent="RunningCharacter"]
-anchors_preset = 5
+[node name="GameTitle" type="TextureRect" parent="RunningCharacter"]
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = 2.5
-offset_top = -10.5
-offset_right = 52.5
-offset_bottom = 8.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -24.0
+offset_right = 52.0
+offset_bottom = 8.0
 grow_horizontal = 2
-text = "Penguin
-Journey"
-label_settings = SubResource("LabelSettings_d7ccw")
-horizontal_alignment = 1
-vertical_alignment = 1
+grow_vertical = 2
+scale = Vector2(0.82, 0.82)
+texture = ExtResource("8_20ho0")
 metadata/_edit_use_anchors_ = true
 
-[node name="Shadow" type="Label" parent="RunningCharacter/GameTitle"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -24.0
-offset_top = 1.0
-offset_right = 26.0
-offset_bottom = 20.0
-grow_horizontal = 2
-text = "Penguin
-Journey"
-label_settings = SubResource("LabelSettings_gitsd")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="IntroductionTransitionTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]
+[connection signal="timeout" from="IntroductionTransitionTimer" to="." method="_on_introduction_transition_timer_timeout"]

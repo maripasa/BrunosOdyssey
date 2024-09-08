@@ -8,6 +8,7 @@ class_name EndingScreen
 
 func _ready() -> void:
 	transition_screen.start_level.connect(_on_level_start)
+
 	game_data.load_game()
 	if game_data.save["level"] != 0:
 		print(game_data.save)
@@ -18,12 +19,10 @@ func _ready() -> void:
 func _on_level_start() -> void:
 	_animation.play("start_animation")
 
-
 func _on_new_game_pressed() -> void:
 	game_data.zero_save()
 	game_data.save_game()
 	transition_screen.fade_in("res://levels/level1.tscn")
-
 
 func _on_continue_pressed() -> void:
 	transition_screen.fade_in("res://levels/level%d.tscn" % game_data.save["level"])

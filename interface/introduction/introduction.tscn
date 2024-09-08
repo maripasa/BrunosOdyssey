@@ -1,0 +1,333 @@
+[gd_scene load_steps=17 format=3 uid="uid://c6dwc3puvofsb"]
+
+[ext_resource type="VideoStream" path="res://interface/introduction/godot_intro.ogv" id="1_2er6d"]
+[ext_resource type="Script" path="res://interface/introduction/introduction.gd" id="1_qfx6r"]
+[ext_resource type="Texture2D" uid="uid://djw6m04s1jfgo" path="res://interface/introduction/frog.png" id="3_84y0s"]
+[ext_resource type="Texture2D" uid="uid://bidexxsuqyon8" path="res://interface/introduction/Developers.png" id="3_kxyfm"]
+[ext_resource type="Texture2D" uid="uid://cyxpbkyxxkhqe" path="res://interface/introduction/GrafxKid.png" id="4_7t7nh"]
+[ext_resource type="Texture2D" uid="uid://yxobj1ksio4s" path="res://interface/introduction/audio_designer.png" id="6_imc67"]
+[ext_resource type="Texture2D" uid="uid://cfehoku7hyoda" path="res://interface/introduction/press_space_to_skip.png" id="7_fuqau"]
+
+[sub_resource type="Animation" id="Animation_dye2l"]
+resource_name = "space"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PressSpace:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_csewp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PressSpace:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_41t7u"]
+_data = {
+"RESET": SubResource("Animation_csewp"),
+"space": SubResource("Animation_dye2l")
+}
+
+[sub_resource type="Animation" id="Animation_st2eh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VineBackground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Developers:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArtDesign:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioDesigner:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q651p"]
+resource_name = "fade_in"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VineBackground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2idjr"]
+resource_name = "show_art_designer"
+length = 3.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ArtDesign:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 3),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yi34f"]
+resource_name = "show_audio_designer"
+length = 3.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioDesigner:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 3),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l8pbr"]
+resource_name = "show_developers"
+length = 3.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Developers:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 3),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l28tk"]
+_data = {
+"RESET": SubResource("Animation_st2eh"),
+"fade_in": SubResource("Animation_q651p"),
+"show_art_designer": SubResource("Animation_2idjr"),
+"show_audio_designer": SubResource("Animation_yi34f"),
+"show_developers": SubResource("Animation_l8pbr")
+}
+
+[node name="Introduction" type="Control" node_paths=PackedStringArray("_animation", "_space_animation", "_godot_intro", "_vine_background", "_developers", "_art_designer", "_audio_designer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qfx6r")
+_animation = NodePath("Animation")
+_space_animation = NodePath("Space")
+_godot_intro = NodePath("GodotIntro")
+_vine_background = NodePath("VineBackground")
+_developers = NodePath("Developers")
+_art_designer = NodePath("ArtDesign")
+_audio_designer = NodePath("AudioDesigner")
+
+[node name="BlackBackground" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="VineBackground" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[node name="GodotIntro" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -7.5
+offset_right = 1909.0
+offset_bottom = 1080.5
+scale = Vector2(0.345, 0.345)
+stream = ExtResource("1_2er6d")
+
+[node name="ArtDesign" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 23.0
+offset_right = 20.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frog" type="TextureRect" parent="ArtDesign"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -28.0
+offset_right = 834.0
+offset_bottom = 378.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("3_84y0s")
+
+[node name="GrafxKid" type="TextureRect" parent="ArtDesign"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -135.0
+offset_right = 534.0
+offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("4_7t7nh")
+
+[node name="AudioDesigner" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_left = 300.0
+offset_top = 160.0
+offset_right = 340.0
+offset_bottom = 200.0
+
+[node name="AudioDesigner" type="TextureRect" parent="AudioDesigner"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -23.0
+offset_right = 44.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_imc67")
+
+[node name="Developers" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DevelopersImage" type="TextureRect" parent="Developers"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -23.0
+offset_right = 44.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_kxyfm")
+
+[node name="Space" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_41t7u")
+}
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l28tk")
+}
+
+[node name="PressSpace" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 517.0
+offset_top = 343.0
+offset_right = 634.0
+offset_bottom = 355.0
+texture = ExtResource("7_fuqau")
+
+[connection signal="finished" from="GodotIntro" to="." method="_on_godot_intro_finished"]
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_player_animation_finished"]

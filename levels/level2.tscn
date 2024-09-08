@@ -19,9 +19,9 @@ layer_1/tile_data = PackedInt32Array(1179647, 327680, 1, 1245183, 327680, 2, 131
 [node name="Character" parent="." instance=ExtResource("3_pymhs")]
 position = Vector2(79, 272)
 score = 0
-map = 1
+level = 1
 volume = 0
-health = 5
+hearts = 5
 _jump_velocity = -300.0
 
 [node name="Enemies" type="Node2D" parent="."]
