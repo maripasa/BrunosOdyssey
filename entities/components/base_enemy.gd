@@ -17,7 +17,6 @@ var _is_alive: bool = true
 @export var _enemy_texture: EnemyTexture
 @export var _floor_detection_ray: RayCast2D
 @export var _knockback_timer: Timer
-@export var _wall_detector: RayCast2D
 
 @export_category("Areas")
 @export var _attack_area_collision: CollisionShape2D
@@ -31,11 +30,9 @@ var _is_alive: bool = true
 @export var _knockback_speed: float = 600
 @export var _dead_knockback_timer: float = 0
 @export var _hit_knockback_timer: float = 0
-@export var _pink_star_enemy: bool = false
 
 func _ready() -> void:
 	_update_direction()
-
 
 func _process(_delta: float) -> void:
 	if _on_knockback:
@@ -78,42 +75,23 @@ func _vertical_movement(_delta: float) -> void:
 
 func _wandering() -> void:
 	if _floor_detection_ray.is_colliding():
-		if _wall_detector.is_colliding():
-			_update_direction()
 		if _floor_detection_ray.get_collider() is TileMap:
 			velocity.x = _direction.x * _move_speed
 			return
-			
 	if is_on_floor():
 		_update_direction()
 		velocity.x = 0
-	
-
-	
 	
 func _update_direction() -> void:
 	_direction.x = -_direction.x
 	_attack_area_collision.position.x = -_attack_area_collision.position.x
 	_detection_area_collision.position.x = -_detection_area_collision.position.x
-
-	
-	if _pink_star_enemy:
-		if _direction.x > 0:
-			_enemy_texture.flip_h = true
-			_floor_detection_ray.position.x = 12
-			_wall_detector.target_position.x = 15
-		if _direction.x < 0:
-			_enemy_texture.flip_h = false
-			_floor_detection_ray.position.x = -12
-			_wall_detector.target_position.x = -15
-	else:
-		if _direction.x > 0:
-			_enemy_texture.flip_h = false
-			_floor_detection_ray.position.x = 12
-
-		if _direction.x < 0:
-			_enemy_texture.flip_h = true
-			_floor_detection_ray.position.x = -12
+	if _direction.x > 0:
+		_enemy_texture.flip_h = false
+		_floor_detection_ray.position.x = 12
+	if _direction.x < 0:
+		_enemy_texture.flip_h = true
+		_floor_detection_ray.position.x = -12
 		
 
 func _attack() -> void:

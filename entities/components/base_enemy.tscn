@@ -6,12 +6,11 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_biwrg"]
 
-[node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("_enemy_texture", "_floor_detection_ray", "_knockback_timer", "_wall_detector", "_attack_area_collision", "_detection_area_collision")]
+[node name="BaseEnemy" type="CharacterBody2D" node_paths=PackedStringArray("_enemy_texture", "_floor_detection_ray", "_knockback_timer", "_attack_area_collision", "_detection_area_collision")]
 script = ExtResource("1_15bxg")
 _enemy_texture = NodePath("Texture")
 _floor_detection_ray = NodePath("FloorDetectionRay")
 _knockback_timer = NodePath("KnockbackTimer")
-_wall_detector = NodePath("WallDetector")
 _attack_area_collision = NodePath("AttackArea/Collision")
 _detection_area_collision = NodePath("DetectionArea/Collision")
 
@@ -25,9 +24,6 @@ _attack_area_collision = NodePath("../AttackArea/Collision")
 
 [node name="FloorDetectionRay" type="RayCast2D" parent="."]
 target_position = Vector2(0, 16)
-
-[node name="WallDetector" type="RayCast2D" parent="."]
-target_position = Vector2(-15, 0)
 
 [node name="AttackArea" type="Area2D" parent="."]
 script = ExtResource("3_vxwgr")
