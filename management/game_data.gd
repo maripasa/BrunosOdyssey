@@ -33,7 +33,8 @@ func save_game() -> void:
 func load_game():
 	var save_game = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if save_game == null:
-		save = {}
+		save = empty
+		return
 		
 	var json = JSON.new()
 	var json_string = save_game.get_line()
@@ -48,7 +49,7 @@ func save_settings() -> void:
 func load_settings():
 	var settings_file = FileAccess.open(SETTINGS_PATH, FileAccess.READ)
 	if settings_file == null:
-		save = {}
+		settings["volume"] = 100
 		
 	var json = JSON.new()
 	var json_string = settings_file.get_line()
@@ -64,6 +65,7 @@ func load_leaderboard() -> void:
 	var leaderboard_file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if leaderboard_file == null:
 		leaderboard = []
+		return
 		
 	var json = JSON.new()
 	var json_string = leaderboard_file.get_line()

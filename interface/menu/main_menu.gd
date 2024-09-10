@@ -30,7 +30,6 @@ func _on_continue_pressed() -> void:
 func _on_score_board_pressed() -> void:
 	pass # Replace with function body.
 
-
 func _on_credits_pressed() -> void:
 	pass # Replace with function body.
 
