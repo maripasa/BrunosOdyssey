@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://cych8nyhwhs6c"]
 
-[ext_resource type="Script" path="res://levels/base_level.gd" id="1_uaakv"]
+[ext_resource type="Script" path="res://levels/level_2.gd" id="1_i8inm"]
 [ext_resource type="PackedScene" uid="uid://bmkbnmjuakohc" path="res://levels/summer_background.tscn" id="2_pmknq"]
 [ext_resource type="PackedScene" uid="uid://donn5av6d4ywb" path="res://levels/summer_terrain.tscn" id="3_rraus"]
 [ext_resource type="Texture2D" uid="uid://5q54qwjb6n5a" path="res://background/1 - Grassland/Grassland_entities (16 x 16).png" id="4_l5lvm"]
@@ -376,9 +376,7 @@ sources/1 = SubResource("TileSetAtlasSource_lnbcp")
 sources/0 = SubResource("TileSetAtlasSource_s5lug")
 
 [node name="SummerLevel" type="Node2D"]
-script = ExtResource("1_uaakv")
-_scene_path = "res://levels/level2.tscn"
-_level_number = 2
+script = ExtResource("1_i8inm")
 
 [node name="Summer_Background" parent="." instance=ExtResource("2_pmknq")]
 

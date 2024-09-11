@@ -7,6 +7,8 @@ class_name EndingScreen
 @export var _continue_shadow: Label
 
 func _ready() -> void:
+	if not sound_fx.interface_music.playing:
+		sound_fx.interface_music.player("play")
 	transition_screen.start_level.connect(_on_level_start)
 	game_data.load_game()
 	if game_data.save["started_game"] != 0:

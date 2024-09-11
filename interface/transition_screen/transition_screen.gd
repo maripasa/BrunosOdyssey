@@ -27,6 +27,5 @@ func introduction_end(scene_path) -> void:
 	get_tree().change_scene_to_file(scene_path)
 	_introduction_timer.start()
 
-
 func _on_introduction_transition_timer_timeout() -> void:
 	emit_signal("start_level")

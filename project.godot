@@ -20,7 +20,7 @@ config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
-sound_fx="*res://management/sound_fx.tscn"
+sound_fx_scene="*res://management/sound_fx.tscn"
 global="*res://management/global.gd"
 game_data="*res://management/game_data.gd"
 transition_screen="*res://interface/transition_screen/transition_screen.tscn"

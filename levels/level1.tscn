@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://cpbxqoou01mlj"]
+[gd_scene load_steps=9 format=4 uid="uid://cpbxqoou01mlj"]
 
 [ext_resource type="PackedScene" uid="uid://bjm5npwam2qee" path="res://levels/base_level.tscn" id="1_rwxfe"]
+[ext_resource type="Script" path="res://levels/level_1.gd" id="2_ia85s"]
 [ext_resource type="Texture2D" uid="uid://bxd5iclrqq242" path="res://terrain/Terrain (16 x 16).png" id="2_mbgld"]
 [ext_resource type="PackedScene" uid="uid://n3x4y7erq8ig" path="res://collectables/coin/collectable_coin.tscn" id="2_s52eg"]
 [ext_resource type="PackedScene" uid="uid://1sywd4khjq5m" path="res://entities/skeleton/skeleton.tscn" id="3_bplol"]
@@ -324,8 +325,8 @@ terrain_set_0/terrain_0/color = Color(1, 1, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_gjp7m")
 
 [node name="WinterLevel" instance=ExtResource("1_rwxfe")]
-_scene_path = "res://levels/level1.tscn"
-_level_number = 1
+script = ExtResource("2_ia85s")
+_scene_path = ""
 
 [node name="Terrain" parent="." index="1"]
 scale = Vector2(1, 1)

@@ -1,11 +1,13 @@
 extends Node2D
 class_name BaseLevel
 
+var music: BaseAudio
 var paused: bool = false
 
 @export_category("Variables")
 @export var _scene_path: String
 @export var _level_number: int
+
 @export_category("Objects")
 @export var _pause_menu: PauseMenu
 

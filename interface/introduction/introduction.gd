@@ -31,7 +31,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "show_developers":
 		_developers.hide()
 		_animation.play("show_audio_designer")
-		sound_fx.main_menu()
+		sound_fx.introduction_music.player("play")
 
 	if anim_name == "show_audio_designer":
 		_audio_designer.hide()
