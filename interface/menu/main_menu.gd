@@ -8,7 +8,6 @@ class_name EndingScreen
 
 func _ready() -> void:
 	transition_screen.start_level.connect(_on_level_start)
-
 	game_data.load_game()
 	if game_data.save["started_game"] != 0:
 		_continue.disabled = false
@@ -27,11 +26,10 @@ func _on_continue_pressed() -> void:
 	transition_screen.fade_in("res://levels/level%d.tscn" % game_data.save["level"])
 
 func _on_score_board_pressed() -> void:
-	pass # Replace with function body.
+	pass
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
-
+	pass
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

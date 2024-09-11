@@ -76,6 +76,7 @@ func load_leaderboard() -> void:
 	
 func zero_save() -> void:
 	save = {
+	"started_game": 0,
 	"score": 0,
 	"coins": 0,
 	"level": 0,
