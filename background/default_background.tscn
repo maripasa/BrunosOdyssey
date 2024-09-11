@@ -12,14 +12,14 @@
 motion_mirroring = Vector2(640, 360)
 
 [node name="TextureRect" type="TextureRect" parent="AdditionalSky"]
-custom_minimum_size = Vector2(495, 360)
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(495, -360)
+offset_right = 640.0
+offset_bottom = 360.0
 texture = ExtResource("2_mt8oo")
 
 [node name="AdditionalGround" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(640, 360)
+motion_mirroring = Vector2(640, 0)
 
 [node name="TextureRect" type="TextureRect" parent="AdditionalGround"]
 custom_minimum_size = Vector2(495, 360)

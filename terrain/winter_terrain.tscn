@@ -325,7 +325,7 @@ tile_set = SubResource("TileSet_56h3f")
 collision_visibility_mode = 1
 format = 2
 
-[node name="Layer0" type="TileMapLayer" parent="."]
+[node name="Layer1" type="TileMapLayer" parent="."]
 use_parent_material = true
 tile_set = SubResource("TileSet_56h3f")
 collision_visibility_mode = 1

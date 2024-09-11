@@ -1,5 +1,4 @@
 extends CanvasLayer
-class_name MainMenu
 
 @export_category("Objects")
 @export var _animation: AnimationPlayer
@@ -25,6 +24,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_level_start() -> void:
+	#SoundFx.interface.play("")
 	_animation.play("start_animation")
 
 func _on_name_input_text_changed(new_text: String) -> void:

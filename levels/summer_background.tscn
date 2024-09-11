@@ -15,7 +15,7 @@ shader_parameter/move_speed = 0.02
 
 [node name="DefaultBackground" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(1, 0.1)
-motion_mirroring = Vector2(640, 0)
+motion_mirroring = Vector2(640, 360)
 
 [node name="TextureRect" type="TextureRect" parent="DefaultBackground"]
 custom_minimum_size = Vector2(640, 800)

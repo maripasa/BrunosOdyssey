@@ -4,13 +4,10 @@
 [ext_resource type="FontFile" uid="uid://cxu2vtaotchpf" path="res://interface/fonts/scrawl/nsj_12.ttf" id="5_amm44"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2xvmv"]
-load_path = "res://.godot/imported/left_banner_piece.png-8f2b58f95ebbdcb8b82b846bf3ab43d5.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4l45n"]
-load_path = "res://.godot/imported/middle_banner_piece.png-9db7754ca3933c9c66bf98e242d493da.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ohlql"]
-load_path = "res://.godot/imported/right_banner_piece.png-944af1449dad14c30e8f85b9af41e7b1.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_fi0j0"]
 line_spacing = 1.0

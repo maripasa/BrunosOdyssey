@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cych8nyhwhs6c"]
+[gd_scene load_steps=16 format=4 uid="uid://cych8nyhwhs6c"]
 
 [ext_resource type="Script" path="res://levels/level_2.gd" id="1_i8inm"]
 [ext_resource type="PackedScene" uid="uid://bmkbnmjuakohc" path="res://levels/summer_background.tscn" id="2_pmknq"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cohbevxj7al7j" path="res://background/1 - Grassland/Terrain (16 x 16).png" id="5_4mv2y"]
 [ext_resource type="PackedScene" uid="uid://cipudn2m5hy6g" path="res://entities/pink_star/pink_star.tscn" id="5_bln1h"]
 [ext_resource type="PackedScene" uid="uid://n3x4y7erq8ig" path="res://collectables/coin/collectable_coin.tscn" id="6_7e5f3"]
+[ext_resource type="PackedScene" uid="uid://btvgui21k5w5p" path="res://interectables/kill_area.tscn" id="9_i4l36"]
+[ext_resource type="PackedScene" uid="uid://oou6h2a3qebp" path="res://interectables/next_level_area.tscn" id="10_c1lui"]
+[ext_resource type="PackedScene" uid="uid://c44yigyuyfjvo" path="res://interface/between_screen/between_screen.tscn" id="11_vvr5n"]
+[ext_resource type="PackedScene" uid="uid://cfv1k3pc4w8dp" path="res://interface/pause_menu/pause_menu.tscn" id="12_1e3en"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s5lug"]
 texture = ExtResource("4_l5lvm")
@@ -375,8 +379,11 @@ terrain_set_0/terrain_0/color = Color(1, 1, 1, 1)
 sources/1 = SubResource("TileSetAtlasSource_lnbcp")
 sources/0 = SubResource("TileSetAtlasSource_s5lug")
 
-[node name="SummerLevel" type="Node2D"]
+[node name="SummerLevel" type="Node2D" node_paths=PackedStringArray("_pause_menu")]
 script = ExtResource("1_i8inm")
+_scene_path = "res://levels/level2.tscn"
+_level_number = 2
+_pause_menu = NodePath("PauseMenu")
 
 [node name="Summer_Background" parent="." instance=ExtResource("2_pmknq")]
 
@@ -392,6 +399,10 @@ tile_set = SubResource("TileSet_t5dpx")
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD//xEAAAAFAAEAAAD//xIAAAAFAAIAAAD//xMAAAAFAAMAAAAAABEAAAAGAAEAAAAAABIAAAAGAAIAAAAAABMAAAAGAAMAAAABABEAAAAHAAEAAAABABIAAAAHAAIAAAABABMAAAAHAAMAAAAFABEAAAADAAUAAAAXABAAAAABAAEAAAAXABEAAAABAAIAAAAXABIAAAABAAMAAAAYABAAAAACAAEAAAAYABEAAAACAAIAAAAYABIAAAACAAMAAAAZABAAAAADAAEAAAAZABEAAAADAAIAAAAZABIAAAADAAMAAAAtABMAAAAJAAMAAAAyABIAAAAOAAQAAAAyABMAAAAOAAUAAAAzABIAAAAPAAQAAAA0ABIAAAAQAAQAAAA0ABMAAAAQAAUAAAA1ABIAAAARAAQAAAA2ABIAAAASAAQAAAA2ABMAAAASAAUAAAA5AA8AAAABAAEAAAA5ABAAAAABAAIAAAA5ABEAAAABAAMAAAA6AA8AAAACAAEAAAA6ABAAAAACAAIAAAA6ABEAAAACAAMAAAA7AA8AAAADAAEAAAA7ABAAAAADAAIAAAA7ABEAAAADAAMAAAAtABEAAAAJAAEAAAAtABIAAAAJAAIAAAAuABEAAAAKAAEAAAAuABIAAAAKAAIAAAAuABMAAAAKAAMAAAAvABEAAAALAAEAAAAvABIAAAALAAIAAAAvABMAAAALAAMAAAAoABAAAAABAAUAAAAjABAAAAABAAUAAABFABEAAAABAAUAAABTAA4AAAAFAAEAAABTAA8AAAAFAAIAAABTABAAAAAFAAMAAABUAA4AAAAGAAEAAABUAA8AAAAGAAIAAABUABAAAAAGAAMAAABVAA4AAAAHAAEAAABVAA8AAAAHAAIAAABVABAAAAAHAAMAAABNAA4AAAAJAAEAAABNAA8AAAAJAAIAAABNABAAAAAJAAMAAABOAA4AAAAKAAEAAABOAA8AAAAKAAIAAABOABAAAAAKAAMAAABPAA4AAAALAAEAAABPAA8AAAALAAIAAABPABAAAAALAAMAAABWABAAAAADAAUAAABCABUAAAAFAAUAAABDABUAAAAGAAUAAABEABUAAAAHAAUAAABIABUAAAABAAUAAABsABEAAAAFAAEAAABsABIAAAAFAAIAAABsABMAAAAFAAMAAABtABEAAAAGAAEAAABtABIAAAAGAAIAAABtABMAAAAGAAMAAABuABEAAAAHAAEAAABuABIAAAAHAAIAAABuABMAAAAHAAMAAACZAAcAAAAFAAEAAACZAAgAAAAFAAIAAACZAAkAAAAFAAMAAACaAAcAAAAGAAEAAACaAAgAAAAGAAIAAACaAAkAAAAGAAMAAACbAAcAAAAHAAEAAACbAAgAAAAHAAIAAACbAAkAAAAHAAMAAACMAAcAAAAJAAEAAACMAAgAAAAJAAIAAACMAAkAAAAJAAMAAACNAAcAAAAKAAEAAACNAAgAAAAKAAIAAACNAAkAAAAKAAMAAACOAAcAAAALAAEAAACOAAgAAAALAAIAAACOAAkAAAALAAMAAACSAAgAAAAOAAQAAACSAAkAAAAOAAUAAACTAAgAAAAPAAQAAACUAAgAAAAQAAQAAACUAAkAAAAQAAUAAACVAAgAAAARAAQAAACWAAgAAAASAAQAAACWAAkAAAASAAUAAACnAAsAAAABAAUAAAC+AA4AAAABAAUAAADDAAwAAAABAAEAAADDAA0AAAABAAIAAADDAA4AAAABAAMAAADEAAwAAAACAAEAAADEAA0AAAACAAIAAADEAA4AAAACAAMAAADFAAwAAAADAAEAAADFAA0AAAADAAIAAADFAA4AAAADAAMAAADNABMAAAAFAAUAAADOABMAAAAGAAUAAADPABMAAAAHAAUAAADTABMAAAABAAUAAADeAA0AAAAFAAEAAADeAA4AAAAFAAIAAADeAA8AAAAFAAMAAADfAA0AAAAGAAEAAADfAA4AAAAGAAIAAADfAA8AAAAGAAMAAADgAA0AAAAHAAEAAADgAA4AAAAHAAIAAADgAA8AAAAHAAMAAADnAA4AAAAJAAEAAADnAA8AAAAJAAIAAADnABAAAAAJAAMAAADoAA4AAAAKAAEAAADoAA8AAAAKAAIAAADoABAAAAAKAAMAAADpAA4AAAALAAEAAADpAA8AAAALAAIAAADpABAAAAALAAMAAADrAA8AAAAOAAQAAADrABAAAAAOAAUAAADsAA8AAAAPAAQAAADtAA8AAAAQAAQAAADtABAAAAAQAAUAAADuAA8AAAARAAQAAADvAA8AAAASAAQAAADvABAAAAASAAUAAADzABAAAAADAAUAAAA=")
 tile_set = SubResource("TileSet_t5dpx")
+
+[node name="BetweenScreen" parent="." node_paths=PackedStringArray("_character", "_next_level_area") instance=ExtResource("11_vvr5n")]
+_character = NodePath("../Character")
+_next_level_area = NodePath("../NextLevelArea")
 
 [node name="Character" parent="." instance=ExtResource("4_tdg85")]
 position = Vector2(74, 279)
@@ -566,3 +577,126 @@ position = Vector2(3087, 45)
 
 [node name="CollectableCoin17" parent="Coins" instance=ExtResource("6_7e5f3")]
 position = Vector2(3361, -19)
+
+[node name="KillBox" type="Node2D" parent="."]
+
+[node name="KillArea" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(50, 433)
+
+[node name="KillArea2" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(-83, 433)
+
+[node name="KillArea3" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(-16, 433)
+
+[node name="KillArea4" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(479, 441)
+
+[node name="KillArea5" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(346, 441)
+
+[node name="KillArea6" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(413, 441)
+
+[node name="KillArea7" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(678, 441)
+
+[node name="KillArea8" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(545, 441)
+
+[node name="KillArea9" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(612, 441)
+
+[node name="KillArea10" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(903, 441)
+
+[node name="KillArea11" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(770, 441)
+
+[node name="KillArea37" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(728, 442)
+
+[node name="KillArea12" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(837, 441)
+
+[node name="KillArea13" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(1103, 443)
+
+[node name="KillArea14" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(970, 443)
+
+[node name="KillArea15" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(1037, 443)
+
+[node name="KillArea16" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(1774, 493)
+
+[node name="KillArea17" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(1641, 493)
+
+[node name="KillArea18" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(1708, 493)
+
+[node name="KillArea19" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(1974, 493)
+
+[node name="KillArea20" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(1841, 493)
+
+[node name="KillArea21" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(1908, 493)
+
+[node name="KillArea22" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2172, 493)
+
+[node name="KillArea23" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2039, 493)
+
+[node name="KillArea24" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2106, 493)
+
+[node name="KillArea25" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2372, 493)
+
+[node name="KillArea26" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2237, 493)
+
+[node name="KillArea27" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2304, 493)
+
+[node name="KillArea28" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2573, 492)
+
+[node name="KillArea29" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2440, 492)
+
+[node name="KillArea30" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2507, 492)
+
+[node name="KillArea31" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2772, 492)
+
+[node name="KillArea32" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2639, 492)
+
+[node name="KillArea33" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2706, 492)
+
+[node name="KillArea34" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2972, 491)
+
+[node name="KillArea35" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2839, 491)
+
+[node name="KillArea36" parent="KillBox" instance=ExtResource("9_i4l36")]
+position = Vector2(2906, 491)
+
+[node name="NextLevelArea" parent="." node_paths=PackedStringArray("_character", "_between_screen") instance=ExtResource("10_c1lui")]
+position = Vector2(3714, 230)
+scale = Vector2(3, 3)
+_character = NodePath("../Character")
+_between_screen = NodePath("../BetweenScreen")
+
+[node name="PauseMenu" parent="." node_paths=PackedStringArray("main") instance=ExtResource("12_1e3en")]
+visible = false
+main = NodePath("..")

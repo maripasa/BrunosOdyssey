@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cd71pywjbf087"]
+
+[ext_resource type="Script" path="res://src/BaseEnemy.gd" id="1_5d6br"]
+[ext_resource type="Texture2D" uid="uid://d4mx7far2aevl" path="res://Sprite Pack 6/Sprite Pack 6/3 - Skeleton/Standing (32 x 32).png" id="2_u1ugi"]
+
+[resource]
+script = ExtResource("1_5d6br")
+name = "Reisqueleto"
+texture = ExtResource("2_u1ugi")
+health = 100
+damage = 15

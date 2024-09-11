@@ -35,6 +35,7 @@ func _process(_delta: float) -> void:
 		_character.coins, _initial_score + _initial_time_score)
 		_time_score_label.text = str(0)
 		_next_level_area.next_level()
+		sound_fx.interface_music.player("stop")
 		return
 		
 	# Add the text to the HUD
@@ -59,6 +60,7 @@ func start() -> void:
 	
 	_character.score += _initial_time_score
 	
+	sound_fx.interface_music.player("play")
 	_animation.play("start_animation")
 	
 

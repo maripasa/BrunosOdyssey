@@ -5,6 +5,8 @@ class_name SoundFx
 @export var interface_music: BaseAudio
 @export var level_1_music: BaseAudio
 @export var level_2_music: BaseAudio
+@export var level_3_music: BaseAudio
+@export var transition_music: BaseAudio
 
 @export var hover: BaseAudio
 @export var click: BaseAudio

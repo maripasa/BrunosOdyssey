@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://yhd2u1hg5m6n"]
+[gd_scene load_steps=11 format=3 uid="uid://yhd2u1hg5m6n"]
 
 [ext_resource type="Script" path="res://management/sound_fx.gd" id="1_15w4c"]
 [ext_resource type="PackedScene" uid="uid://q3vxcm5eu4cg" path="res://management/BaseAudio.tscn" id="2_j0nxw"]
@@ -6,22 +6,50 @@
 [ext_resource type="AudioStream" uid="uid://dy38pfh1mjbkn" path="res://assets/sound/level_1_music.ogg" id="3_6utfv"]
 [ext_resource type="AudioStream" uid="uid://c0i7n1mwaj6sy" path="res://assets/sound/interface.ogg" id="5_pmrjn"]
 [ext_resource type="AudioStream" uid="uid://c2n4jys4l7y28" path="res://assets/sound/level_2_music.ogg" id="6_ub5tn"]
+[ext_resource type="AudioStream" uid="uid://dxtpkn8dvg8q7" path="res://assets/sound/level_3_music.ogg" id="7_hslp5"]
+[ext_resource type="AudioStream" uid="uid://c1b82t2l1am6r" path="res://assets/sound/transicao.ogg" id="7_s31lg"]
+[ext_resource type="AudioStream" uid="uid://b6cv1xbrqnhdh" path="res://assets/sound/hover.ogg" id="8_ygii0"]
+[ext_resource type="AudioStream" uid="uid://krtiroxqn71" path="res://assets/sound/click.ogg" id="9_4bhfj"]
 
-[node name="SoundFx" type="Node2D" node_paths=PackedStringArray("introduction_music", "interface_music", "level_1_music", "level_2_music")]
+[node name="SoundFx" type="Node2D" node_paths=PackedStringArray("introduction_music", "interface_music", "level_1_music", "level_2_music", "level_3_music", "transition_music", "hover", "click")]
 script = ExtResource("1_15w4c")
 introduction_music = NodePath("IntroductionMusic")
 interface_music = NodePath("InterfaceMusic")
 level_1_music = NodePath("Level1Music")
 level_2_music = NodePath("Level2Music")
+level_3_music = NodePath("Level3Music")
+transition_music = NodePath("TransitionScreen")
+hover = NodePath("Hover")
+click = NodePath("Click")
 
 [node name="IntroductionMusic" parent="." instance=ExtResource("2_j0nxw")]
 stream = ExtResource("2_rpgey")
+parameters/looping = true
 
 [node name="InterfaceMusic" parent="." instance=ExtResource("2_j0nxw")]
 stream = ExtResource("5_pmrjn")
+parameters/looping = true
 
 [node name="Level1Music" parent="." instance=ExtResource("2_j0nxw")]
 stream = ExtResource("3_6utfv")
+parameters/looping = true
 
 [node name="Level2Music" parent="." instance=ExtResource("2_j0nxw")]
 stream = ExtResource("6_ub5tn")
+parameters/looping = true
+
+[node name="Level3Music" parent="." instance=ExtResource("2_j0nxw")]
+stream = ExtResource("7_hslp5")
+parameters/looping = true
+
+[node name="TransitionScreen" parent="." instance=ExtResource("2_j0nxw")]
+stream = ExtResource("7_s31lg")
+parameters/looping = false
+
+[node name="Hover" parent="." instance=ExtResource("2_j0nxw")]
+stream = ExtResource("8_ygii0")
+parameters/looping = false
+
+[node name="Click" parent="." instance=ExtResource("2_j0nxw")]
+stream = ExtResource("9_4bhfj")
+parameters/looping = false
