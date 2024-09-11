@@ -80,7 +80,7 @@ func _wandering() -> void:
 	if _floor_detection_ray.is_colliding():
 		if _wall_detector.is_colliding():
 			_update_direction()
-		if _floor_detection_ray.get_collider() is TileMap:
+		if _floor_detection_ray.get_collider() is TileMapLayer:
 			velocity.x = _direction.x * _move_speed
 			return
 			
@@ -88,15 +88,11 @@ func _wandering() -> void:
 		_update_direction()
 		velocity.x = 0
 	
-
-	
-	
 func _update_direction() -> void:
 	_direction.x = -_direction.x
 	_attack_area_collision.position.x = -_attack_area_collision.position.x
 	_detection_area_collision.position.x = -_detection_area_collision.position.x
 
-	
 	if _pink_star_enemy:
 		if _direction.x > 0:
 			_enemy_texture.flip_h = true

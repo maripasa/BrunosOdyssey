@@ -9,8 +9,6 @@ class_name BaseCharacter
 @export var hearts: int = 5
 
 var _jump_count: int = 0
-var _fall_distance: float = 0
-var _fall_start_y: float = 0.0
 var _on_knockback: bool = false
 var _is_alive: bool = true
 var _on_floor: bool
@@ -87,15 +85,6 @@ func _vertical_movement(_delta: float) -> void:
 			return
 		if _is_falling:
 			_is_falling = false
-			_fall_distance = abs(global_position.y - _fall_start_y)
-			if _fall_distance > _high_fall_threshold:
-				_character_texture.action_animation("duck")
-				global.spawn_effect(
-					"res://visual_effects/cloud_poof/fall_effect.tscn",
-					Vector2(0, 0),
-					global_position,
-					false)
-				set_physics_process(false)
 				
 		if not _on_floor:
 			_on_floor = true
@@ -108,7 +97,6 @@ func _vertical_movement(_delta: float) -> void:
 	if velocity.y < 0:
 		_is_falling = false
 	if velocity.y > 0 and not _is_falling:
-		_fall_start_y = global_position.y
 		_is_falling = true
 		
 	if Input.is_action_just_pressed("jump") and _jump_count < 2 and _is_alive:

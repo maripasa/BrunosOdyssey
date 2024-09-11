@@ -10,6 +10,7 @@ func _on_resume_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	game_data.save_game()
+	main.pause_menu()
 	transition_screen.fade_in("res://interface/menu/main_menu.tscn")
 
 

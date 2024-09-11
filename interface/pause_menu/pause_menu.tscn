@@ -1,10 +1,16 @@
 [gd_scene load_steps=16 format=3 uid="uid://cfv1k3pc4w8dp"]
 
 [ext_resource type="Script" path="res://interface/pause_menu/pause_menu.gd" id="1_jp263"]
-[ext_resource type="Texture2D" uid="uid://c2b0p60iusioq" path="res://interface/menu/left_banner_piece.png" id="2_m2ui4"]
-[ext_resource type="Texture2D" uid="uid://b13x5msfrii2u" path="res://interface/menu/middle_banner_piece.png" id="3_x62yf"]
-[ext_resource type="Texture2D" uid="uid://btwmouyvgwh70" path="res://interface/menu/right_banner_piece.png" id="4_l3ytg"]
 [ext_resource type="FontFile" uid="uid://cxu2vtaotchpf" path="res://interface/fonts/scrawl/nsj_12.ttf" id="5_amm44"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2xvmv"]
+load_path = "res://.godot/imported/left_banner_piece.png-8f2b58f95ebbdcb8b82b846bf3ab43d5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4l45n"]
+load_path = "res://.godot/imported/middle_banner_piece.png-9db7754ca3933c9c66bf98e242d493da.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ohlql"]
+load_path = "res://.godot/imported/right_banner_piece.png-944af1449dad14c30e8f85b9af41e7b1.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_fi0j0"]
 line_spacing = 1.0
@@ -52,19 +58,19 @@ position = Vector2(653, 10)
 [node name="TextureRect" type="TextureRect" parent="Banner"]
 offset_right = 23.0
 offset_bottom = 17.0
-texture = ExtResource("2_m2ui4")
+texture = SubResource("CompressedTexture2D_2xvmv")
 
 [node name="TextureRect2" type="TextureRect" parent="Banner"]
 offset_left = 23.0
 offset_right = 55.0
 offset_bottom = 12.0
-texture = ExtResource("3_x62yf")
+texture = SubResource("CompressedTexture2D_4l45n")
 
 [node name="TextureRect3" type="TextureRect" parent="Banner"]
 offset_left = 55.0
 offset_right = 78.0
 offset_bottom = 17.0
-texture = ExtResource("4_l3ytg")
+texture = SubResource("CompressedTexture2D_ohlql")
 
 [node name="PauseTitle" type="Label" parent="."]
 anchors_preset = 5

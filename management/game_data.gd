@@ -8,6 +8,7 @@ const LEADER_BOARD = "user://leaderboard.data"
 var leaderboard: Array
 
 var save: Dictionary = {
+	"started_game": 0,
 	"score": 0,
 	"coins": 0,
 	"level": 0,
@@ -15,6 +16,7 @@ var save: Dictionary = {
 }
 
 var empty: Dictionary = {
+	"started_game": 0,
 	"score": 0,
 	"coins": 0,
 	"level": 0,

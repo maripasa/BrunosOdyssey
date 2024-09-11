@@ -10,17 +10,16 @@ func _ready() -> void:
 	transition_screen.start_level.connect(_on_level_start)
 
 	game_data.load_game()
-	if game_data.save["level"] != 0:
-		print(game_data.save)
+	if game_data.save["started_game"] != 0:
 		_continue.disabled = false
 		_continue_shadow.show()
-
 
 func _on_level_start() -> void:
 	_animation.play("start_animation")
 
 func _on_new_game_pressed() -> void:
 	game_data.zero_save()
+	game_data.save["started_game"] = 1
 	game_data.save_game()
 	transition_screen.fade_in("res://levels/level1.tscn")
 

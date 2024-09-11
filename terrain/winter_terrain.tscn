@@ -309,6 +309,7 @@ texture = ExtResource("1_fxppj")
 4:8/0/terrains_peering_bit/top_left_corner = 0
 4:8/0/terrains_peering_bit/top_side = 0
 4:8/0/terrains_peering_bit/top_right_corner = 0
+6:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_56h3f"]
 physics_layer_0/collision_layer = 3
@@ -323,3 +324,8 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_56h3f")
 collision_visibility_mode = 1
 format = 2
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_56h3f")
+collision_visibility_mode = 1
